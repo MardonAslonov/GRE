@@ -74,26 +74,26 @@
 
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form>
+                            <form method="get" action="test">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="form3Example1" class="form-control" />
+                                            <input type="text" class="form-control" name="name"/>
                                             <label class="form-label" for="form3Example1">Ism</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="form3Example2" class="form-control" />
+                                            <input type="text" class="form-control" name="surname"/>
                                             <label class="form-label" for="form3Example2">Familiya</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Email input -->
+                                <!-- Phone input -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
+                                    <input type="text" class="form-control" name="phone"/>
                                     <label class="form-label" for="form3Example3">Telefon raqam</label>
                                 </div>
 
@@ -105,15 +105,14 @@
 
                                 <!-- Submit button -->
 
-                                {{-- <button type="submit" class="btn btn-primary btn-block mb-4">
+                                <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Tizimga kirish
-                                </button> --}}
+                                </button>
 
                             </form>
-
-                            <a href="gre"><button type="submit" class="btn btn-primary btn-block mb-4">
+                            {{-- <a href="gre"><button type="submit" class="btn btn-primary btn-block mb-4">
                                 Tizimga kirish
-                            </button></a>
+                            </button></a> --}}
 
                         </div>
                     </div>
