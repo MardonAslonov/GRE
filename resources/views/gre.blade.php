@@ -68,7 +68,8 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://0.academia-photos.com/attachment_thumbnails/1195537/mini_magick20180817-26069-pkczp0.png?1534544420"
+                        <img class="card-img-top"
+                            src="https://0.academia-photos.com/attachment_thumbnails/1195537/mini_magick20180817-26069-pkczp0.png?1534544420"
                             alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
@@ -93,7 +94,8 @@
                             New
                         </div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://m.media-amazon.com/images/I/61Yfp1DrH0L._AC_UF1000,1000_QL80_.jpg"
+                        <img class="card-img-top"
+                            src="https://m.media-amazon.com/images/I/61Yfp1DrH0L._AC_UF1000,1000_QL80_.jpg"
                             alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">

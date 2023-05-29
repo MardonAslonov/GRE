@@ -11,8 +11,6 @@
 </head>
 
 <body>
-
-
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
@@ -25,7 +23,9 @@
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
                             <h3 class="text-danger">1.</h3>
-                            <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
+                            <img class="img-thumbnail" width="855"
+                                src="https://blog.fenix.help/common/upload/ckeditor/2020/08/31/02de6c-obrazec-oformleniya-zadachi-1598879337.jpg"
+                                alt="..." />
                         </div>
                         <div class="ans ml-2">
                             <label class="radio"> <input type="radio" name="brazil" value="brazil">
@@ -48,11 +48,12 @@
                             </label>
                         </div>
                     </div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button
-                            class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i
-                                class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button
-                            class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i
-                                class="fa fa-angle-right ml-2"></i></button></div>
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i
+                                class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Oldingi</button><button
+                            class="btn btn-primary border-success align-items-center btn-success"
+                            type="button">Keyingi<i class="fa fa-angle-right ml-2"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
