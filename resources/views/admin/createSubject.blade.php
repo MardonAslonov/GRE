@@ -60,12 +60,12 @@
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        GRE Subject Test <br />
-                        <span style="color: hsl(218, 81%, 75%)">Fizika (50% ustama) </span>
+                        GRE Savollari <br />
+                        <span style="color: hsl(218, 81%, 75%)">Bazaga joylash</span>
                     </h1>
-                    <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                    {{-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
                         GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
-                    </p>
+                    </p> --}}
                 </div>
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -73,39 +73,29 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('gre') }}">
+                            <form method="post" action="{{ route('create') }}">
                                 @csrf
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" name="name" />
-                                            <label class="form-label" for="form3Example1">Ism</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" name="surname" />
-                                            <label class="form-label" for="form3Example2">Familiya</label>
-                                        </div>
-                                    </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" name="variant_id" />
+                                    <label class="form-label" for="form3Example1">variant_id</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="file" class="form-control" name="image" required>
+                                    <label class="form-label" for="form3Example2">image</label>
                                 </div>
 
                                 <!-- Phone input -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="phone" />
-                                    <label class="form-label" for="form3Example3">Telefon raqam</label>
-                                </div>
-
-                                <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
-                                    <label class="form-label" for="form3Example4">Parol</label>
+                                    <input type="text" class="form-control" name="answer" />
+                                    <label class="form-label" for="form3Example3">answer</label>
                                 </div>
 
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">
-                                    Tizimga kirish
+                                    Bazaga joylash
                                 </button>
                             </form>
                         </div>

@@ -26,6 +26,10 @@
                             <img class="img-thumbnail" width="855"
                                 src="https://blog.fenix.help/common/upload/ckeditor/2020/08/31/02de6c-obrazec-oformleniya-zadachi-1598879337.jpg"
                                 alt="..." />
+
+                            <img src="{{ asset('your path to folder of images in public folder/ ' . $post->image) }}" />
+
+
                         </div>
                         <div class="ans ml-2">
                             <label class="radio"> <input type="radio" name="brazil" value="brazil">
