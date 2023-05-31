@@ -23,13 +23,9 @@
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
                             <h3 class="text-danger">1.</h3>
-                            <img class="img-thumbnail" width="855"
-                                src="https://blog.fenix.help/common/upload/ckeditor/2020/08/31/02de6c-obrazec-oformleniya-zadachi-1598879337.jpg"
-                                alt="..." />
-
-                            <img src="{{ asset('storage\app\test\image\rtvz1kXKeWy6vuw6kGYoytMPM45n58GgN6XRNHb6.jpg') }}" />
-
-
+                            <img class="img-thumbnail" width="855" id="img-thumbnail"
+                                src="{{ asset('storage','3 - tarjima.jpg')}}"
+                                alt="salom" />
                         </div>
                         <div class="ans ml-2">
                             <label class="radio"> <input type="radio" name="brazil" value="brazil">
