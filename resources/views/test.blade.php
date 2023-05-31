@@ -27,7 +27,7 @@
                                 src="https://blog.fenix.help/common/upload/ckeditor/2020/08/31/02de6c-obrazec-oformleniya-zadachi-1598879337.jpg"
                                 alt="..." />
 
-                            <img src="{{ asset('your path to folder of images in public folder/ ' . $post->image) }}" />
+                            <img src="{{ asset('storage\app\test\image\rtvz1kXKeWy6vuw6kGYoytMPM45n58GgN6XRNHb6.jpg') }}" />
 
 
                         </div>

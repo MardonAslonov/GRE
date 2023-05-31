@@ -73,7 +73,7 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('create') }}">
+                            <form method="post" action="{{ route('create') }}" enctype="multipart/form-data">
                                 @csrf
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
 
