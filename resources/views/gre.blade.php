@@ -69,20 +69,21 @@
                     <div class="card h-100">
                         <!-- Product image-->
                         <img class="card-img-top"
-                            src="https://0.academia-photos.com/attachment_thumbnails/1195537/mini_magick20180817-26069-pkczp0.png?1534544420"
+                            src="https://0.academia-photos.com/attachment_thumbnails/28148429/mini_magick20180818-7998-xrlql5.png?1534647739"
                             alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">GR-0177</h5>
+                                <h5 class="fw-bolder">GR1776</h5>
                                 <!-- Product price-->
                                 $00.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="test">Boshlash
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                    href="{{ route('start', $id = 1) }}">Boshlash
                                 </a></div>
                         </div>
                     </div>

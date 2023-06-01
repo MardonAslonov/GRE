@@ -15,8 +15,19 @@ class TestController extends Controller
         $name = $file->getClientOriginalName();
         $test->image = $name;
         $test->answer = $request->answer;
-        $file->storeAs('public/image', $name);
+        $file->storeAs('public', $name);
         $test->save();
         return 'Joylandi';
+    }
+
+    public function start(Request $request)
+    {
+        $id = $request->id;
+        $test = Test::where('id', $id)->first();
+        $image = $test->image;
+        return view('test', [
+            'image' => $image,
+            'id' => $id
+        ]);
     }
 }

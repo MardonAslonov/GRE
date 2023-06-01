@@ -23,3 +23,5 @@ Route::get('/create', function () {
 });
 
 Route::post('/create',[TestController::class,'create'])->name('create');
+Route::get('/start/{id}',[TestController::class,'start'])->name('start');
+
