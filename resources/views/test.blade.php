@@ -17,7 +17,8 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>GR1776</h4><span>(1 of 100)</span>
+                            <h4>GR1776</h4><span>( {{ $id }} / 100 )</span>
+
                         </div>
                     </div>
                     <div class="question bg-white p-3 border-bottom">
@@ -53,8 +54,11 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                        <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-danger"
+                            href="{{ route('previousQuestion', $id) }}">Oldingi</a>
+                        </div>
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-success"
-                            href="{{ route('start', $id = $id + 1) }}">Keyingi</a>
+                            href="{{ route('nextQuestion', $id) }}">Keyingi</a>
                         </div>
                     </div>
                 </div>

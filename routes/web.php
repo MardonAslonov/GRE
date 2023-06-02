@@ -24,4 +24,7 @@ Route::get('/create', function () {
 
 Route::post('/create',[TestController::class,'create'])->name('create');
 Route::get('/start/{id}',[TestController::class,'start'])->name('start');
+Route::get('/nextQuestion/{id}',[TestController::class,'nextQuestion'])->name('nextQuestion');
+Route::get('/previousQuestion/{id}',[TestController::class,'previousQuestion'])->name('previousQuestion');
+
 

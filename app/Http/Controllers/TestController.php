@@ -30,4 +30,28 @@ class TestController extends Controller
             'id' => $id
         ]);
     }
+
+    public function nextQuestion(Request $request)
+    {
+        $id = $request->id;
+        $id = $id + 1;
+        $test = Test::where('id', $id)->first();
+        $image = $test->image;
+        return view('test', [
+            'image' => $image,
+            'id' => $id
+        ]);
+    }
+
+    public function previousQuestion(Request $request)
+    {
+        $id = $request->id;
+        $id = $id - 1;
+        $test = Test::where('id', $id)->first();
+        $image = $test->image;
+        return view('test', [
+            'image' => $image,
+            'id' => $id
+        ]);
+    }
 }
