@@ -11,14 +11,10 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5  px-1">
         <?php $a = 1; ?>
 
         <?php $b = 35; ?>
-
-
-
-
 
 
         @while ($a <= $count)
