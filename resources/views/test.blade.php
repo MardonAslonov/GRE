@@ -12,15 +12,74 @@
 
 <body>
     <div class="container mt-5">
+        <?php $a = 1; ?>
+
+        <?php $b = 35; ?>
+
+
+
+
+
+
+        @while ($a <= $count)
+            @if ($a == $id)
+                <a href="{{ route('startSelect', $a) }}"><button type="button"
+                        class="btn btn-secondary px-1 mt-1">{{ $a++ }}</button></a>
+            @else
+                <a href="{{ route('startSelect', $a) }}"><button type="button"
+                        class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a>
+            @endif
+        @endwhile
+
+
+
+        {{-- @foreach ($count as $con)
+            <button type="button" class="btn btn-outline-secondary">{{ $a++ }}</button>
+        @endforeach --}}
+    </div>
+    <div class="container mt-5">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>GR1776</h4><span>( {{ $id }} / 100 )</span>
-
+                            <h4>GR-1776</h4><span>( {{ $id }} / 100 )</span>
                         </div>
                     </div>
+
+
+                    {{-- <div class="m-3"></div> --}}
+
+
+
+                    {{-- <div class="m-3"></div>
+            <div class="btn-group me-2 mb-3" role="group" aria-label="First group">
+                <?php $a = 1; ?>
+                <?php $check = 5; ?>
+            @foreach ($count as $con)
+                @if ($results != null)
+                    @foreach ($results as $res)
+                        @if ($res->project_id == $con)
+                        <input type="hidden"  {{$check=1}}>
+                        @endif
+                    @endforeach
+                    @if ($check == 0 && $con != $project->id)
+                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-outline-secondary">{{$a++}}</button></a>
+                    @elseif($con==$project->id)
+                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-secondary">{{$a++}}</button></a>
+                    @else
+                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-success">{{$a++}}</button></a>
+                    @endif
+                    <input type="hidden"  {{$check=0}}>
+                @else
+                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-outline-secondary" >{{$a++}}</button></a>
+                @endif
+            @endforeach
+            </div> --}}
+
+
+
+
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
                             <img class="img-thumbnail rounded mx-auto d-block" src="{{ asset('storage/' . $image) }}"
@@ -55,10 +114,10 @@
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-danger"
-                            href="{{ route('previousQuestion', $id) }}">Oldingi</a>
+                                href="{{ route('previousQuestion', ['id' => $id, 'count' => $count]) }}">Oldingi</a>
                         </div>
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-success"
-                            href="{{ route('nextQuestion', $id) }}">Keyingi</a>
+                                href="{{ route('nextQuestion', ['id' => $id, 'count' => $count]) }}">Keyingi</a>
                         </div>
                     </div>
                 </div>
