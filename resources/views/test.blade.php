@@ -2,12 +2,20 @@
 <html lang="en">
 
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>GRE test</title>
+
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
 
 <body>
@@ -26,8 +34,6 @@
                         class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a>
             @endif
         @endwhile
-
-
 
         {{-- @foreach ($count as $con)
             <button type="button" class="btn btn-outline-secondary">{{ $a++ }}</button>
@@ -120,6 +126,8 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
 </body>
 
 </html>
