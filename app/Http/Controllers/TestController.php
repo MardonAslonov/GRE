@@ -72,4 +72,9 @@ class TestController extends Controller
             'count' => $count,
         ]);
     }
+
+    public function registr(Request $request)
+    {
+        return 'Registr';
+    }
 }

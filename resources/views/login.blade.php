@@ -107,10 +107,22 @@
                                 </div>
 
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-4">
+                                {{-- <button type="submit" class="btn btn-primary btn-block mb-4">
                                     Tizimga kirish
-                                </button>
+                                </button> --}}
+
+                                <button type="submit" class="btn btn-primary btn-sm col-md-4 mb-4">Tizimga kirish</button>
+                                <a href="{{ route('registr') }}"><button type="button" class="btn btn-primary btn-sm col-md-4 mb-4">Ro'yxatdan o'tish</button></a>
+
+
+                                {{-- <a href="{{ route('startSelect', $a) }}"><button type="button"
+                                    class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a> --}}
+
+
                             </form>
+                            {{-- <button type="submit" class="btn btn-primary btn-block mb-4">
+                                Tizimga kirish
+                            </button> --}}
                         </div>
                     </div>
                 </div>

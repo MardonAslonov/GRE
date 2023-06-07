@@ -27,5 +27,7 @@ Route::get('/start/{id}',[TestController::class,'start'])->name('start');
 Route::get('/startSelect/{a}',[TestController::class,'startSelect'])->name('startSelect');
 Route::get('/nextQuestion',[TestController::class,'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion',[TestController::class,'previousQuestion'])->name('previousQuestion');
+Route::get('/registr',[TestController::class,'registr'])->name('registr');
+
 
 
