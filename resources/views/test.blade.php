@@ -2,29 +2,26 @@
 <html lang="en">
 
 <head>
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <title>GRE test</title>
-
-
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
 
 <body>
-    <div class="container mt-5  px-1">
+    <div class="container mt-3  px-1">
+        <button class="btn btn-dark" type="text">
+            {{ Auth::User()->name }}
+            <i class="bi bi-person-fill"></i>
+        </button>
+    </div>
+    <div class="container mt-3  px-1">
         <?php $a = 1; ?>
-
         <?php $b = 35; ?>
-
-
         @while ($a <= $count)
             @if ($a == $id)
                 <a href="{{ route('startSelect', $a) }}"><button type="button"
@@ -34,10 +31,6 @@
                         class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a>
             @endif
         @endwhile
-
-        {{-- @foreach ($count as $con)
-            <button type="button" class="btn btn-outline-secondary">{{ $a++ }}</button>
-        @endforeach --}}
     </div>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
@@ -48,11 +41,7 @@
                             <h4>GR-1776</h4><span>( {{ $id }} / 100 )</span>
                         </div>
                     </div>
-
-
                     {{-- <div class="m-3"></div> --}}
-
-
 
                     {{-- <div class="m-3"></div>
             <div class="btn-group me-2 mb-3" role="group" aria-label="First group">
@@ -78,10 +67,6 @@
                 @endif
             @endforeach
             </div> --}}
-
-
-
-
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
                             <img class="img-thumbnail rounded mx-auto d-block" src="{{ asset('storage/' . $image) }}"

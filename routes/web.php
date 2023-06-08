@@ -32,6 +32,7 @@ Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrP
 Route::post('/userCreate',[UserController::class,'userCreate'])->name('userCreate');
 
 Route::post('/auth',[AuthController::class,'auth'])->name('auth');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
 

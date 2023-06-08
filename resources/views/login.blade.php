@@ -93,7 +93,7 @@
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="password"
+                                    <input type="password" class="form-control" name="password"
                                         placeholder="Parolingiz" />
                                 </div>
 

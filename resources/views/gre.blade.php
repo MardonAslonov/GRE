@@ -28,10 +28,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 </ul>
-                <button class="btn btn-outline-dark" type="text">
+
+                {{-- <ul>
+                    <button type="button" class="btn btn-outline-warning">{{Auth::User()->name}}</button>
+                      <a href="{{route('logout')}}"  class="btn btn-outline-warning">log out</a>
+                  </ul> --}}
+
+                <button class="btn btn-outline-dark me-md-2" type="text">
                     {{ Auth::User()->name }}
                     <i class="bi bi-person-fill"></i>
                 </button>
+                <a href="{{route('logout')}}"  class="btn btn-outline-dark px-1">chiqish <i class="bi bi-door-open-fill"></i></a>
             </div>
         </div>
     </nav>
