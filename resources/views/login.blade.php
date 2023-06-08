@@ -83,7 +83,7 @@
                     <br>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('userCreate') }}">
+                            <form method="post" action="{{ route('auth') }}">
                                 @csrf
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
 
@@ -93,7 +93,7 @@
 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control"
+                                    <input type="text" class="form-control" name="password"
                                         placeholder="Parolingiz" />
                                 </div>
 

@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+
+
     public function userCreate(RegisterRequest $request)
     {
         $user = new User();

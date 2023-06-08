@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::get('/previousQuestion',[TestController::class,'previousQuestion'])->name
 Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
 Route::post('/userCreate',[UserController::class,'userCreate'])->name('userCreate');
 
+Route::post('/auth',[AuthController::class,'auth'])->name('auth');
 
 
 
