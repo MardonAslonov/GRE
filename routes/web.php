@@ -8,7 +8,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::post('/gre',[UserController::class,'create'])->name('gre');
 
 Route::get('/admin', function () {
     return view('admin.admin');
@@ -27,7 +26,10 @@ Route::get('/start/{id}',[TestController::class,'start'])->name('start');
 Route::get('/startSelect/{a}',[TestController::class,'startSelect'])->name('startSelect');
 Route::get('/nextQuestion',[TestController::class,'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion',[TestController::class,'previousQuestion'])->name('previousQuestion');
-Route::get('/registr',[TestController::class,'registr'])->name('registr');
+
+Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
+Route::post('/userCreate',[UserController::class,'userCreate'])->name('userCreate');
+
 
 
 

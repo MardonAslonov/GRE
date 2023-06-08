@@ -73,8 +73,5 @@ class TestController extends Controller
         ]);
     }
 
-    public function registr(Request $request)
-    {
-        return 'Registr';
-    }
+    
 }
