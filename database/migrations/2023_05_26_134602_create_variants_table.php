@@ -11,17 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tests', function (Blueprint $table) {
+        Schema::create('variants', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('variant_id');
-            $table->foreign('variant_id')
-                ->references('id')
-                ->on('variants')
-                ->onDelete('cascade');
-
-            $table->string('image');
-            $table->string('nameImage');
+            $table->string('number');
             $table->timestamps();
         });
     }
@@ -31,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tests');
+        Schema::dropIfExists('variants');
     }
 };
