@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
 
     public function run(): void
     {
-        $check = User::where('phone',+998998955991)->first();
+        $check = User::where('phone',)->first();
         if (empty($check)){
             $user = new User();
             $user->name = "Mardon";
