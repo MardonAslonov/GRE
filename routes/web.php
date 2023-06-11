@@ -9,10 +9,11 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::post('/auth',[AuthController::class,'auth'])->name('auth');
+Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
 
-Route::get('/admin', function () {
-    return view('admin.admin');
-});
+
+Route::get('/admin', function () { return view('admin.admin'); })->name('admin');
 
 Route::get('/test', function () {
     return view('test');
@@ -28,10 +29,8 @@ Route::get('/startSelect/{a}',[TestController::class,'startSelect'])->name('star
 Route::get('/nextQuestion',[TestController::class,'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion',[TestController::class,'previousQuestion'])->name('previousQuestion');
 
-Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
 Route::post('/userCreate',[UserController::class,'userCreate'])->name('userCreate');
 
-Route::post('/auth',[AuthController::class,'auth'])->name('auth');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 

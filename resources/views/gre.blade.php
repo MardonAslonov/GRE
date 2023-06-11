@@ -28,17 +28,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 </ul>
-
-                {{-- <ul>
-                    <button type="button" class="btn btn-outline-warning">{{Auth::User()->name}}</button>
-                      <a href="{{route('logout')}}"  class="btn btn-outline-warning">log out</a>
-                  </ul> --}}
-
+                @if (Auth::User()->phone == '+998998955991')
+                    <a href="{{ route('admin') }}" class="btn btn-outline-dark me-md-2">Admin panel <i
+                            class="bi bi-house-fill"></i></a>
+                @endif
                 <button class="btn btn-outline-dark me-md-2" type="text">
-                    {{ Auth::User()->name }}        
+                    {{ Auth::User()->name }}
                     <i class="bi bi-person-fill"></i>
                 </button>
-                <a href="{{route('logout')}}"  class="btn btn-outline-dark px-1">chiqish <i class="bi bi-door-open-fill"></i></a>
+                <a href="{{ route('logout') }}" class="btn btn-outline-dark">chiqish <i
+                        class="bi bi-door-open-fill"></i></a>
             </div>
         </div>
     </nav>
@@ -141,7 +140,8 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://www.physicsgreprep.com/frontcover.png" alt="..." />
+                        <img class="card-img-top" src="https://www.physicsgreprep.com/frontcover.png"
+                            alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
