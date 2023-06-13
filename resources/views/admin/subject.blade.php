@@ -75,8 +75,21 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <form method="post" action="{{ route('createSubject') }}" enctype="multipart/form-data">
                                 @csrf
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
 
+
+
+                                <div class="mb-3">
+                                    <select class="form-select" name="subjectId" required>
+                                        <option selected disabled value="">Choose the variant</option>
+                                        @foreach ($variants as $variant)
+                                            <option value="{{ $variant->id }}">{{ $variant->number }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+
+
+                                <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="form-outline mb-4">
                                     <input type="text" class="form-control" name="variant_id" />
                                     <label class="form-label" for="form3Example1">variant_id</label>

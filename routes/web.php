@@ -19,7 +19,10 @@ Route::get('/test', function () {return view('test');});
 
 // Admin
 Route::get('/admin', function () {return view('admin.admin');})->name('admin');
-Route::get('/subject', function () {return view('admin.subject');})->name('subject');
+
+Route::get('/testCreate',[TestController::class,'testCreate'])->name('testCreate');
+
+// Route::get('/subject', function () {return view('admin.subject');})->name('subject');
 Route::get('/variant', function () {return view('admin.variant');})->name('variant');
 Route::post('/createSubject',[TestController::class,'createSubject'])->name('createSubject');
 Route::post('/createVariant',[VariantController::class,'createVariant'])->name('createVariant');

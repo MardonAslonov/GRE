@@ -18,7 +18,7 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
             <h1> GRE savollari </h1>
         </div>
-        <a href="subject"><button type="button" class="btn btn-success">Savol qo'shish</button></a>
+        <a href="testCreate"><button type="button" class="btn btn-success">Savol qo'shish</button></a>
         <a href="variant"><button type="button" class="btn btn-success">Variant qoshish</button></a>
 
         <button type="button" class="btn btn-secondary">Secondary</button>
