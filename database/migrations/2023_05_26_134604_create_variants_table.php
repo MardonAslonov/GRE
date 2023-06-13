@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('variants', function (Blueprint $table) {
             $table->id();
             $table->string('number');
-            $table->string('image');
+            $table->string('nameImage');
             $table->timestamps();
         });
     }

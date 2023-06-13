@@ -6,7 +6,7 @@ use App\Models\Test;
 use Illuminate\Http\Request;
 class TestController extends Controller
 {
-    public function create(Request $request)
+    public function createSubject(Request $request)
     {
         $test = new Test();
         $test->variant_id = $request->variant_id;
@@ -73,5 +73,5 @@ class TestController extends Controller
         ]);
     }
 
-    
+
 }

@@ -7,13 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>GRE Uzbekistan</title>
+    <title>GRE Variant</title>
 </head>
 
 <body>
 
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
+        <br>
+        <br>
         <style>
             .background-radial-gradient {
                 background-color: hsl(218, 41%, 15%);
@@ -60,7 +62,7 @@
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        GRE Savollari <br />
+                        GRE Variantlari <br />
                         <span style="color: hsl(218, 81%, 75%)">Bazaga joylash</span>
                     </h1>
                     {{-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
@@ -73,24 +75,18 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('create') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('createVariant') }}" enctype="multipart/form-data">
                                 @csrf
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="variant_id" />
-                                    <label class="form-label" for="form3Example1">variant_id</label>
+                                    <input type="text" class="form-control" name="number"
+                                        placeholder="variant nomeri" />
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <input type="file" class="form-control" name="image" required>
-                                    <label class="form-label" for="form3Example2">image</label>
-                                </div>
-
-                                <!-- Phone input -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="answer" />
-                                    <label class="form-label" for="form3Example3">answer</label>
+                                    <label class="form-label" for="form3Example2">Titul rasmi</label>
                                 </div>
 
                                 <!-- Submit button -->
@@ -103,6 +99,7 @@
                 </div>
             </div>
         </div>
+        <br>
     </section>
 </body>
 

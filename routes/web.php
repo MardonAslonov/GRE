@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VariantController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,17 +14,19 @@ Route::post('/auth',[AuthController::class,'auth'])->name('auth');
 Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
 
 
-Route::get('/admin', function () { return view('admin.admin'); })->name('admin');
 
-Route::get('/test', function () {
-    return view('test');
-});
+Route::get('/test', function () {return view('test');});
 
-Route::get('/create', function () {
-    return view('admin.createSubject');
-});
+// Admin
+Route::get('/admin', function () {return view('admin.admin');})->name('admin');
+Route::get('/subject', function () {return view('admin.subject');})->name('subject');
+Route::get('/variant', function () {return view('admin.variant');})->name('variant');
+Route::post('/createSubject',[TestController::class,'createSubject'])->name('createSubject');
+Route::post('/createVariant',[VariantController::class,'createVariant'])->name('createVariant');
 
-Route::post('/create',[TestController::class,'create'])->name('create');
+//
+
+
 Route::get('/start/{id}',[TestController::class,'start'])->name('start');
 Route::get('/startSelect/{a}',[TestController::class,'startSelect'])->name('startSelect');
 Route::get('/nextQuestion',[TestController::class,'nextQuestion'])->name('nextQuestion');
