@@ -11,7 +11,7 @@ class Test extends Model
 
     protected $fillable = [
         'variant_id',
-        'image',
+        'nameImage',
         'answer',
     ];
 }

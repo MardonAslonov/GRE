@@ -20,12 +20,11 @@ return new class extends Migration
                 ->on('variants')
                 ->onDelete('cascade');
 
-            $table->string('image');
-            $table->string('nameImage');
+            $table->string('nameImage')->unique();
+            $table->string('answer');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

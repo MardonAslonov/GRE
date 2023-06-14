@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('variants', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
-            $table->string('nameImage');
+            $table->string('number')->unique();
+            $table->string('nameImage')->unique();
             $table->timestamps();
         });
     }

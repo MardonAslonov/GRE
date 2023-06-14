@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class VariantController extends Controller
 {
-    public function createVariant(Request $request)
+    public function variantCreate(Request $request)
     {
         $variant = new Variant();
         $variant->number = $request->number;
@@ -16,6 +16,6 @@ class VariantController extends Controller
         $variant->nameImage = $name;
         $file->storeAs('public/variant', $name);
         $variant->save();
-        return 'Joylandi';
+        return 'Variant joylandi';
     }
 }

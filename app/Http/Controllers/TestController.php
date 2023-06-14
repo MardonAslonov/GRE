@@ -8,12 +8,27 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function testCreate(Request $request)
+    public function testCreatePage(Request $request)
     {
         $variants = Variant::all();
-        return view('admin.subject', [
+        return view('admin.testCreatePage', [
             'variants' => $variants
         ]);
+    }
+
+    public function testCreate(Request $request)
+    {
+
+        $test = new Test();
+        $test->variant_id = $request->variantId;
+        $file = $request->file('image');
+        $name = $file->getClientOriginalName();
+        $test->nameImage = $name;
+        $test->answer = $request->answer;
+        $file->storeAs('public/test', $name);
+        $test->save();
+        return 'Test joylandi';
+
     }
 
     public function start(Request $request)
