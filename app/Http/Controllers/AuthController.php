@@ -19,7 +19,6 @@ class AuthController extends Controller
             return view('gre', [
                 'variants' => $variants,
             ]);
-            // return view('gre');
         } else {
             return redirect()->back();
         }

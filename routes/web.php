@@ -23,11 +23,10 @@ Route::get('/testCreatePage',[TestController::class,'testCreatePage'])->name('te
 Route::get('/variantCreatePage', function () {return view('admin.variantCreatePage');})->name('variantCreatePage');
 Route::post('/testCreate',[TestController::class,'testCreate'])->name('testCreate');
 Route::post('/variantCreate',[VariantController::class,'variantCreate'])->name('variantCreate');
-
 //
 
-
-Route::get('/start/{id}',[TestController::class,'start'])->name('start');
+// User
+Route::get('/start',[TestController::class,'start'])->name('start');
 Route::get('/startSelect/{a}',[TestController::class,'startSelect'])->name('startSelect');
 Route::get('/nextQuestion',[TestController::class,'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion',[TestController::class,'previousQuestion'])->name('previousQuestion');

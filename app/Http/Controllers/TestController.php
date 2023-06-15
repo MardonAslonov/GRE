@@ -18,7 +18,6 @@ class TestController extends Controller
 
     public function testCreate(Request $request)
     {
-
         $test = new Test();
         $test->variant_id = $request->variantId;
         $file = $request->file('image');
@@ -28,19 +27,23 @@ class TestController extends Controller
         $file->storeAs('public/test', $name);
         $test->save();
         return 'Test joylandi';
-
     }
 
     public function start(Request $request)
     {
-        $count = count(Test::where('variant_id', 'GR-1776')->get());
+        $number = $request->number;
         $id = $request->id;
-        $test = Test::where('id', $id)->first();
-        $image = $test->image;
+        $tests = Test::where('variant_id', $id)->get();
+        $count = count($tests);
+        $testArrayNumber = 0;
+        $test = $tests[$testArrayNumber];
+        $nameImage = $test->nameImage;
         return view('test', [
-            'image' => $image,
+            'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
+            'number' => $number,
+            'testArrayNumber' => $testArrayNumber,
         ]);
     }
 
@@ -59,29 +62,39 @@ class TestController extends Controller
 
     public function nextQuestion(Request $request)
     {
+        $number = $request->number;
         $id = $request->id;
-        $count = $request->count;
-        $id = $id + 1;
-        $test = Test::where('id', $id)->first();
-        $image = $test->image;
+        $testArrayNumber = $request->testArrayNumber;
+        $tests = Test::where('variant_id', $id)->get();
+        $count = count($tests);
+        $testArrayNumber = $testArrayNumber + 1;
+        $test = $tests[$testArrayNumber];
+        $nameImage = $test->nameImage;
         return view('test', [
-            'image' => $image,
+            'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
+            'number' => $number,
+            'testArrayNumber' => $testArrayNumber,
         ]);
     }
 
     public function previousQuestion(Request $request)
     {
+        $number = $request->number;
         $id = $request->id;
-        $count = $request->count;
-        $id = $id - 1;
-        $test = Test::where('id', $id)->first();
-        $image = $test->image;
+        $testArrayNumber = $request->testArrayNumber;
+        $tests = Test::where('variant_id', $id)->get();
+        $count = count($tests);
+        $testArrayNumber = $testArrayNumber - 1;
+        $test = $tests[$testArrayNumber];
+        $nameImage = $test->nameImage;
         return view('test', [
-            'image' => $image,
+            'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
+            'number' => $number,
+            'testArrayNumber' => $testArrayNumber,
         ]);
     }
 }

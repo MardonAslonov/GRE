@@ -40,9 +40,9 @@
     </nav>
     <div class="container mt-3  px-1">
         <?php $a = 1; ?>
-        <?php $b = 35; ?>
+        <?php $currentTest = $testArrayNumber + 1; ?>
         @while ($a <= $count)
-            @if ($a == $id)
+            @if ($a == $currentTest)
                 <a href="{{ route('startSelect', $a) }}"><button type="button"
                         class="btn btn-secondary px-1 mt-1">{{ $a++ }}</button></a>
             @else
@@ -57,7 +57,7 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>GR-1776</h4><span>( {{ $id }} / 100 )</span>
+                            <h4>{{ $number }}</h4><span>( {{ $currentTest = $testArrayNumber + 1}} / 100 )</span>
                         </div>
                     </div>
                     {{-- <div class="m-3"></div> --}}
@@ -88,7 +88,7 @@
             </div> --}}
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
-                            <img class="img-thumbnail rounded mx-auto d-block" src="{{ asset('storage/' . $image) }}"
+                            <img class="img-thumbnail rounded mx-auto d-block" src="{{ asset('storage/test/' . $nameImage) }}"
                                 alt="" />
                         </div>
                         <br>
@@ -120,10 +120,10 @@
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-danger"
-                                href="{{ route('previousQuestion', ['id' => $id, 'count' => $count]) }}">Oldingi</a>
+                                href="{{ route('previousQuestion', ['id' => $id, 'testArrayNumber' => $testArrayNumber, 'number' => $number]) }}">Oldingi</a>
                         </div>
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-success"
-                                href="{{ route('nextQuestion', ['id' => $id, 'count' => $count]) }}">Keyingi</a>
+                                href="{{ route('nextQuestion', ['id' => $id, 'testArrayNumber' => $testArrayNumber, 'number' => $number]) }}">Keyingi</a>
                         </div>
                     </div>
                 </div>
