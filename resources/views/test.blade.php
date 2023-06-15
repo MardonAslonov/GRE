@@ -57,7 +57,7 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>{{ $number }}</h4><span>( {{ $currentTest = $testArrayNumber + 1}} / 100 )</span>
+                            <h4>{{ $number }}</h4><span>( {{ $currentTest = $testArrayNumber + 1 }} / 100 )</span>
                         </div>
                     </div>
                     {{-- <div class="m-3"></div> --}}
@@ -88,35 +88,50 @@
             </div> --}}
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
-                            <img class="img-thumbnail rounded mx-auto d-block" src="{{ asset('storage/test/' . $nameImage) }}"
-                                alt="" />
+                            <img class="img-thumbnail rounded mx-auto d-block"
+                                src="{{ asset('storage/test/' . $nameImage) }}" alt="" />
                         </div>
                         <br>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="brazil" value="brazil">
+                        <?php $letters = [1, 2, 3, 4, 5]; ?>
+                        @foreach ($letters as $letter)
+                            @if ($letter == 1)
+                            <input type="radio" name="name"> A
+                            @elseif ($letter == 2)
+                            <input type="radio" name="name"> B
+                            @elseif ($letter == 3)
+                            <input type="radio" name="name"> C
+                            @elseif ($letter == 4)
+                            <input type="radio" name="name"> D
+                            @else
+                            <input type="radio" name="name"> E
+                            @endif
+                            <br>
+                        @endforeach
+                        {{-- <div class="ans ml-2">
+                            <label class="radio"> <input type="radio" name="name" value="A">
                                 <span>A</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="brazil" value="brazil">
+                            <label> <input type="radio" name="name" value="B">
                                 <span>B</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="brazil" value="brazil">
+                            <label class="radio"> <input type="radio" name="name" value="C">
                                 <span>C</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="brazil" value="brazil">
+                            <label class="radio"> <input type="radio" name="name" value="D">
                                 <span>D</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="brazil" value="brazil">
+                            <label class="radio"> <input type="radio" name="name" value="E">
                                 <span>E</span>
                             </label>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-danger"
