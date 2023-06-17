@@ -16,6 +16,11 @@ class TestController extends Controller
         ]);
     }
 
+    public function b(Request $request)
+    {
+        dd($request->id);
+    }
+
     public function testCreate(Request $request)
     {
         $test = new Test();
@@ -38,8 +43,10 @@ class TestController extends Controller
         $testArrayNumber = 0;
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
+        $answer = $test->answer;
         return view('test', [
             'nameImage' => $nameImage,
+            'answer' => $answer,
             'id' => $id,
             'count' => $count,
             'number' => $number,

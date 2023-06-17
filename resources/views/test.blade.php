@@ -92,21 +92,20 @@
                                 src="{{ asset('storage/test/' . $nameImage) }}" alt="" />
                         </div>
                         <br>
-                        <?php $letters = [1, 2, 3, 4, 5]; ?>
-                        @foreach ($letters as $letter)
-                            @if ($letter == 1)
-                            <input type="radio" name="name"> A
-                            @elseif ($letter == 2)
-                            <input type="radio" name="name"> B
-                            @elseif ($letter == 3)
-                            <input type="radio" name="name"> C
-                            @elseif ($letter == 4)
-                            <input type="radio" name="name"> D
-                            @else
-                            <input type="radio" name="name"> E
-                            @endif
-                            <br>
-                        @endforeach
+                        <form
+                            action="{{ route('b', ['id' => $id, 'testArrayNumber' => $testArrayNumber, 'number' => $number]) }}">
+                            <input type="radio" name="answerUser" value="A">
+                            <label for="html">A</label><br>
+                            <input type="radio" name="answerUser" value="B">
+                            <label for="css">B</label><br>
+                            <input type="radio" name="answerUser" value="C">
+                            <label for="css">C</label><br>
+                            <input type="radio" name="answerUser" value="D">
+                            <label for="css">D</label><br>
+                            <input type="radio" name="answerUser" value="E">
+                            <label for="javascript">E</label><br><br>
+                            <input type="submit" class="btn btn-outline-primary" value="Javob berish">
+                        </form>
                         {{-- <div class="ans ml-2">
                             <label class="radio"> <input type="radio" name="name" value="A">
                                 <span>A</span>

@@ -14,6 +14,9 @@ Route::post('/auth',[AuthController::class,'auth'])->name('auth');
 Route::get('/registrPage',[UserController::class,'registrPage'])->name('registrPage');
 
 
+Route::get('/a', function () {return view('a');});
+Route::get('/b',[TestController::class,'b'])->name('b');
+
 
 Route::get('/test', function () {return view('test');});
 
