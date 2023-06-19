@@ -23,12 +23,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 </ul>
-
-                {{-- <ul>
-                    <button type="button" class="btn btn-outline-warning">{{Auth::User()->name}}</button>
-                      <a href="{{route('logout')}}"  class="btn btn-outline-warning">log out</a>
-                  </ul> --}}
-
                 <button class="btn btn-outline-dark me-md-2" type="text">
                     {{ Auth::User()->name }}
                     <i class="bi bi-person-fill"></i>
@@ -92,45 +86,24 @@
                                 src="{{ asset('storage/test/' . $nameImage) }}" alt="" />
                         </div>
                         <br>
-                        <form
-                            action="{{ route('b', ['id' => $id, 'testArrayNumber' => $testArrayNumber, 'number' => $number]) }}">
-                            <input type="radio" name="answerUser" value="A">
-                            <label for="html">A</label><br>
-                            <input type="radio" name="answerUser" value="B">
-                            <label for="css">B</label><br>
-                            <input type="radio" name="answerUser" value="C">
-                            <label for="css">C</label><br>
-                            <input type="radio" name="answerUser" value="D">
-                            <label for="css">D</label><br>
-                            <input type="radio" name="answerUser" value="E">
-                            <label for="javascript">E</label><br><br>
+                        <form action="{{ route('b') }}">
+                            @csrf
+                            <input type="radio" name="answerUser" value="A" required>
+                            <label>A</label><br>
+                            <input type="radio" name="answerUser" value="B" required>
+                            <label>B</label><br>
+                            <input type="radio" name="answerUser" value="C" required>
+                            <label>C</label><br>
+                            <input type="radio" name="answerUser" value="D" required>
+                            <label>D</label><br>
+                            <input type="radio" name="answerUser" value="E" required>
+                            <label>E</label><br><br>
+                            <input type="hidden" name="id" value={{ $id }}>
+                            <input type="hidden" name="testArrayNumber" value={{ $testArrayNumber }}>
+                            <input type="hidden" name="number" value={{ $number }}>
+                            <input type="hidden" name="answer" value={{ $answer }}>
                             <input type="submit" class="btn btn-outline-primary" value="Javob berish">
                         </form>
-                        {{-- <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="name" value="A">
-                                <span>A</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label> <input type="radio" name="name" value="B">
-                                <span>B</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="name" value="C">
-                                <span>C</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="name" value="D">
-                                <span>D</span>
-                            </label>
-                        </div>
-                        <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="name" value="E">
-                                <span>E</span>
-                            </label>
-                        </div> --}}
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
                         <div class="text-center"><a class="btn btn-primary d-flex align-items-center btn-danger"

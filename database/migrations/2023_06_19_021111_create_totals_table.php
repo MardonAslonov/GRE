@@ -6,12 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+   
     public function up(): void
     {
-        Schema::create('results', function (Blueprint $table) {
+        Schema::create('totals', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('user_id');
@@ -26,19 +24,13 @@ return new class extends Migration
                 ->on('variants')
                 ->onDelete('cascade');
 
-            $table->string('numberQuestion')->default(0);
-            $table->string('correctAnswer')->default(0);
-            $table->string('incorrectAnswer')->default(1);
-            $table->string('noAnswer');
+            $table->string('total');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('results');
+        Schema::dropIfExists('totals');
     }
 };

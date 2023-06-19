@@ -18,7 +18,8 @@ class TestController extends Controller
 
     public function b(Request $request)
     {
-        dd($request->id);
+        // $m = [1,2,3];
+        dd($request->all());
     }
 
     public function testCreate(Request $request)
@@ -77,12 +78,14 @@ class TestController extends Controller
         $testArrayNumber = $testArrayNumber + 1;
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
+        $answer = $test->answer;
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
+            'answer' => $answer,
         ]);
     }
 
@@ -96,12 +99,14 @@ class TestController extends Controller
         $testArrayNumber = $testArrayNumber - 1;
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
+        $answer = $test->answer;
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
+            'answer' => $answer,
         ]);
     }
 }
