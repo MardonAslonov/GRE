@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Result;
 use App\Models\Test;
 use App\Models\Variant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
@@ -73,6 +75,9 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+        $user_id = Auth::User()->id;
+        $variant = Variant::where('number', $number)->first();
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
@@ -80,6 +85,7 @@ class TestController extends Controller
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
             'answer' => $answer,
+            'numbersOfHasAnswer' => $numbersOfHasAnswer,
         ]);
     }
 

@@ -40,10 +40,19 @@
                 <a href="{{ route('startSelect', $a) }}"><button type="button"
                         class="btn btn-secondary px-1 mt-1">{{ $a++ }}</button></a>
             @else
+                {{-- @if ($a != $currentTest) --}}
+                    @foreach ($numbersOfHasAnswer as $item)
+                        @if ($a == $item->numberQuestion)
+                            <a href="{{ route('startSelect', $a) }}"><button type="button"
+                                    class="btn btn-success px-1 mt-1">{{ $a }}</button></a>
+                        @endif
+                    @endforeach
+                {{-- @endif --}}
                 <a href="{{ route('startSelect', $a) }}"><button type="button"
                         class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a>
             @endif
         @endwhile
+
     </div>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
