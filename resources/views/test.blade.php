@@ -86,7 +86,7 @@
                                 src="{{ asset('storage/test/' . $nameImage) }}" alt="" />
                         </div>
                         <br>
-                        <form action="{{ route('b') }}">
+                        <form action="{{ route('answerUser') }}">
                             @csrf
                             <input type="radio" name="answerUser" value="A" required>
                             <label>A</label><br>

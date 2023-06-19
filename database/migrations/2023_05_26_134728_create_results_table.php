@@ -26,10 +26,10 @@ return new class extends Migration
                 ->on('variants')
                 ->onDelete('cascade');
 
-            $table->string('numberQuestion')->default(0);
+            $table->string('numberQuestion');
             $table->string('correctAnswer')->default(0);
-            $table->string('incorrectAnswer')->default(1);
-            $table->string('noAnswer');
+            $table->string('incorrectAnswer')->default(0);
+            $table->string('noAnswer')->default(1);
             $table->timestamps();
         });
     }

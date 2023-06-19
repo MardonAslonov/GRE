@@ -16,12 +16,6 @@ class TestController extends Controller
         ]);
     }
 
-    public function b(Request $request)
-    {
-        // $m = [1,2,3];
-        dd($request->all());
-    }
-
     public function testCreate(Request $request)
     {
         $test = new Test();
