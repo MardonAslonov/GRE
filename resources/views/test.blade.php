@@ -36,21 +36,24 @@
         <?php $a = 1; ?>
         <?php $currentTest = $testArrayNumber + 1; ?>
         @while ($a <= $count)
-            @if ($a == $currentTest)
+            <?php $b = 0; ?>
+
+
+            @foreach ($numbersOfHasAnswer as $item)
+                @if ($a == $item->numberQuestion)
+                    <a href="{{ route('startSelect', $a) }}"><button type="button"
+                            class="btn btn-success px-1 mt-1">{{ $a }}</button></a>
+                    <?php $b = 1; ?>
+                @endif
+            @endforeach
+
+
+            @if ($b == 0)
                 <a href="{{ route('startSelect', $a) }}"><button type="button"
-                        class="btn btn-secondary px-1 mt-1">{{ $a++ }}</button></a>
-            @else
-                {{-- @if ($a != $currentTest) --}}
-                    @foreach ($numbersOfHasAnswer as $item)
-                        @if ($a == $item->numberQuestion)
-                            <a href="{{ route('startSelect', $a) }}"><button type="button"
-                                    class="btn btn-success px-1 mt-1">{{ $a }}</button></a>
-                        @endif
-                    @endforeach
-                {{-- @endif --}}
-                <a href="{{ route('startSelect', $a) }}"><button type="button"
-                        class="btn btn-outline-secondary px-1 mt-1">{{ $a++ }}</button></a>
+                        class="btn btn-outline-secondary px-1 mt-1">{{ $a }}</button></a>
             @endif
+            <?php $a++; ?>
+
         @endwhile
 
     </div>
@@ -63,32 +66,6 @@
                             <h4>{{ $number }}</h4><span>( {{ $currentTest = $testArrayNumber + 1 }} / 100 )</span>
                         </div>
                     </div>
-                    {{-- <div class="m-3"></div> --}}
-
-                    {{-- <div class="m-3"></div>
-            <div class="btn-group me-2 mb-3" role="group" aria-label="First group">
-                <?php $a = 1; ?>
-                <?php $check = 5; ?>
-            @foreach ($count as $con)
-                @if ($results != null)
-                    @foreach ($results as $res)
-                        @if ($res->project_id == $con)
-                        <input type="hidden"  {{$check=1}}>
-                        @endif
-                    @endforeach
-                    @if ($check == 0 && $con != $project->id)
-                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-outline-secondary">{{$a++}}</button></a>
-                    @elseif($con==$project->id)
-                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-secondary">{{$a++}}</button></a>
-                    @else
-                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-success">{{$a++}}</button></a>
-                    @endif
-                    <input type="hidden"  {{$check=0}}>
-                @else
-                        <a href="{{route('list',['subject_id'=>$subject->id,'project_id'=>$con ])}}"><button type="button" class="btn btn-outline-secondary" >{{$a++}}</button></a>
-                @endif
-            @endforeach
-            </div> --}}
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
                             <img class="img-thumbnail rounded mx-auto d-block"
@@ -97,15 +74,15 @@
                         <br>
                         <form action="{{ route('answerUser') }}">
                             @csrf
-                            <input type="radio" name="answerUser" value="A" required>
+                            <input type="radio" name="answerUser" value="{{ old('A') }}" required>
                             <label>A</label><br>
-                            <input type="radio" name="answerUser" value="B" required>
+                            <input type="radio" name="answerUser" value="{{ old('B') }}" required>
                             <label>B</label><br>
-                            <input type="radio" name="answerUser" value="C" required>
+                            <input type="radio" name="answerUser" value="{{ old('C') }}" required>
                             <label>C</label><br>
-                            <input type="radio" name="answerUser" value="D" required>
+                            <input type="radio" name="answerUser" value="{{ old('D') }}" required>
                             <label>D</label><br>
-                            <input type="radio" name="answerUser" value="E" required>
+                            <input type="radio" name="answerUser" value="{{ old('E') }}" required>
                             <label>E</label><br><br>
                             <input type="hidden" name="id" value={{ $id }}>
                             <input type="hidden" name="testArrayNumber" value={{ $testArrayNumber }}>

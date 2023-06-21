@@ -41,6 +41,9 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+        $user_id = Auth::User()->id;
+        $variant = Variant::where('number', $number)->first();
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
         return view('test', [
             'nameImage' => $nameImage,
             'answer' => $answer,
@@ -48,6 +51,8 @@ class TestController extends Controller
             'count' => $count,
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
+            'numbersOfHasAnswer' => $numbersOfHasAnswer,
+
         ]);
     }
 
@@ -100,6 +105,9 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+        $user_id = Auth::User()->id;
+        $variant = Variant::where('number', $number)->first();
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
@@ -107,6 +115,7 @@ class TestController extends Controller
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
             'answer' => $answer,
+            'numbersOfHasAnswer' => $numbersOfHasAnswer,
         ]);
     }
 }
