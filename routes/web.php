@@ -28,7 +28,7 @@ Route::post('/variantCreate', [VariantController::class, 'variantCreate'])->name
 
 // User
 Route::get('/start', [TestController::class, 'start'])->name('start');
-Route::get('/startSelect/{a}', [TestController::class, 'startSelect'])->name('startSelect');
+Route::get('/startSelect', [TestController::class, 'startSelect'])->name('startSelect');
 Route::get('/nextQuestion', [TestController::class, 'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion', [TestController::class, 'previousQuestion'])->name('previousQuestion');
 Route::get('/answerUser', [ResultController::class, 'answerUser'])->name('answerUser');

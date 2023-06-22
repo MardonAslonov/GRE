@@ -38,22 +38,20 @@
         @while ($a <= $count)
             <?php $b = 0; ?>
 
-
             @foreach ($numbersOfHasAnswer as $item)
                 @if ($a == $item->numberQuestion)
-                    <a href="{{ route('startSelect', $a) }}"><button type="button"
-                            class="btn btn-success px-1 mt-1">{{ $a }}</button></a>
+                    <a
+                        href="{{ route('startSelect', ['id' => $id, 'testArrayNumber' => $a - 1, 'number' => $number]) }}"><button
+                            type="button" class="btn btn-success px-1 mt-1">{{ $a }}</button></a>
                     <?php $b = 1; ?>
                 @endif
             @endforeach
 
-
             @if ($b == 0)
-                <a href="{{ route('startSelect', $a) }}"><button type="button"
-                        class="btn btn-outline-secondary px-1 mt-1">{{ $a }}</button></a>
+                <a href="{{ route('startSelect', ['id' => $id, 'testArrayNumber' => $a - 1, 'number' => $number]) }}"><button
+                        type="button" class="btn btn-outline-secondary px-1 mt-1">{{ $a }}</button></a>
             @endif
             <?php $a++; ?>
-
         @endwhile
 
     </div>
@@ -63,7 +61,8 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>{{ $number }}</h4><span>( {{ $currentTest = $testArrayNumber + 1 }} / 100 )</span>
+                            <h4>{{ $number }}</h4>
+                            <h6><span>({{ $currentTest = $testArrayNumber + 1 }}/ 100 )</span></h6>
                         </div>
                     </div>
                     <div class="question bg-white p-3 border-bottom">

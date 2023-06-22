@@ -58,14 +58,26 @@ class TestController extends Controller
 
     public function startSelect(Request $request)
     {
-        $count = count(Test::where('variant_id', 'GR-1776')->get());
-        $id = $request->a;
-        $test = Test::where('id', $id)->first();
-        $image = $test->image;
+        $number = $request->number;
+        $id = $request->id;
+        $testArrayNumber = $request->testArrayNumber;
+        $tests = Test::where('variant_id', $id)->get();
+        $count = count($tests);
+        // $testArrayNumber = $testArrayNumber;
+        $test = $tests[$testArrayNumber];
+        $nameImage = $test->nameImage;
+        $answer = $test->answer;
+        $user_id = Auth::User()->id;
+        $variant = Variant::where('number', $number)->first();
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
         return view('test', [
-            'image' => $image,
+            'nameImage' => $nameImage,
             'id' => $id,
             'count' => $count,
+            'number' => $number,
+            'testArrayNumber' => $testArrayNumber,
+            'answer' => $answer,
+            'numbersOfHasAnswer' => $numbersOfHasAnswer,
         ]);
     }
 
