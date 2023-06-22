@@ -27,8 +27,9 @@
                     {{ Auth::User()->name }}
                     <i class="bi bi-person-fill"></i>
                 </button>
-                <a href="{{ route('logout') }}" class="btn btn-outline-dark px-1">chiqish <i
+                <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
+                <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-dark px-1">Testni tugatish</a>
             </div>
         </div>
     </nav>
@@ -73,15 +74,15 @@
                         <br>
                         <form action="{{ route('answerUser') }}">
                             @csrf
-                            <input type="radio" name="answerUser" value="{{ old('A') }}" required>
+                            <input type="radio" name="answerUser" value="A" required>
                             <label>A</label><br>
-                            <input type="radio" name="answerUser" value="{{ old('B') }}" required>
+                            <input type="radio" name="answerUser" value="B" required>
                             <label>B</label><br>
-                            <input type="radio" name="answerUser" value="{{ old('C') }}" required>
+                            <input type="radio" name="answerUser" value="C" required>
                             <label>C</label><br>
-                            <input type="radio" name="answerUser" value="{{ old('D') }}" required>
+                            <input type="radio" name="answerUser" value="D" required>
                             <label>D</label><br>
-                            <input type="radio" name="answerUser" value="{{ old('E') }}" required>
+                            <input type="radio" name="answerUser" value="E" required>
                             <label>E</label><br><br>
                             <input type="hidden" name="id" value={{ $id }}>
                             <input type="hidden" name="testArrayNumber" value={{ $testArrayNumber }}>

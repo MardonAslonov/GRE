@@ -32,6 +32,7 @@ Route::get('/startSelect', [TestController::class, 'startSelect'])->name('startS
 Route::get('/nextQuestion', [TestController::class, 'nextQuestion'])->name('nextQuestion');
 Route::get('/previousQuestion', [TestController::class, 'previousQuestion'])->name('previousQuestion');
 Route::get('/answerUser', [ResultController::class, 'answerUser'])->name('answerUser');
+Route::get('/finishTest/{number}', [ResultController::class, 'finishTest'])->name('finishTest');
 
 
 
