@@ -26,6 +26,7 @@ return new class extends Migration
                 ->on('variants')
                 ->onDelete('cascade');
 
+            $table->string('answerUser');
             $table->string('numberQuestion');
             $table->string('correctAnswer')->default(0);
             $table->string('incorrectAnswer')->default(0);

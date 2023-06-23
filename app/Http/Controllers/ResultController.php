@@ -20,17 +20,15 @@ class ResultController extends Controller
         $answerUser = $request->answerUser;
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
-
         $testResult = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->where('numberQuestion', $testArrayNumber + 1)->get();
-
         foreach ($testResult as $key) {
             $key->delete();
         }
-
         $result = new Result();
         $result->user_id = $user_id;
         $result->variant_id = $variant->id;
         $result->numberQuestion = $testArrayNumber + 1;
+        $result->answerUser = $answerUser;
         if ($answerUser == $answer) {
             $result->correctAnswer = 1;
             $result->noAnswer = 0;

@@ -29,7 +29,7 @@
                 </button>
                 <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
-                <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-dark px-1">Testni tugatish</a>
+                <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-primary px-1">testni tugatish</a>
             </div>
         </div>
     </nav>
@@ -72,17 +72,39 @@
                                 src="{{ asset('storage/test/' . $nameImage) }}" alt="" />
                         </div>
                         <br>
+                        @php
+                            $i = 0;
+                        @endphp
                         <form action="{{ route('answerUser') }}">
                             @csrf
-                            <input type="radio" name="answerUser" value="A" required>
+                            <input type="radio" name="answerUser" value="A"
+                                @foreach ($numbersOfHasAnswer as $item)
+                            @if ($item->numberQuestion == $currentTest)
+                               {{ $i = $item->answerUser }}
+                           @endif @endforeach
+                                @if ($i == 'A') checked
+                            @else
+                            required @endif>
                             <label>A</label><br>
-                            <input type="radio" name="answerUser" value="B" required>
+                            <input type="radio" name="answerUser" value="B"
+                                @if ($i == 'B') checked
+                            @else
+                            required @endif>
                             <label>B</label><br>
-                            <input type="radio" name="answerUser" value="C" required>
+                            <input type="radio" name="answerUser" value="C"
+                                @if ($i == 'C') checked
+                            @else
+                            required @endif>
                             <label>C</label><br>
-                            <input type="radio" name="answerUser" value="D" required>
+                            <input type="radio" name="answerUser" value="D"
+                                @if ($i == 'D') checked
+                            @else
+                            required @endif>
                             <label>D</label><br>
-                            <input type="radio" name="answerUser" value="E" required>
+                            <input type="radio" name="answerUser" value="E"
+                                @if ($i == 'E') checked
+                            @else
+                            required @endif>
                             <label>E</label><br><br>
                             <input type="hidden" name="id" value={{ $id }}>
                             <input type="hidden" name="testArrayNumber" value={{ $testArrayNumber }}>
