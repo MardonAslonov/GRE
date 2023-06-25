@@ -17,6 +17,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">GRE Subject test Fizika <i class="bi bi-emoji-smile"></i></a>
+            {{--  --}}
+            <a class="navbar-brand" href="#!" id="countdown">02:00:00</a>
+            <script src="app.js"></script>
+            {{--  --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -30,6 +34,11 @@
                 <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
                 <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-primary px-1">testni tugatish</a>
+
+
+
+
+
             </div>
         </div>
     </nav>
@@ -127,6 +136,9 @@
     </div>
     <br>
     <br>
+
+
+
 </body>
 
 </html>

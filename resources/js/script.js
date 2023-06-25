@@ -1,5 +1,5 @@
-import './bootstrap';
 
+// soat
 const startingMinutes = 10;
 let time = startingMinutes * 60;
 
@@ -16,4 +16,3 @@ function updateCountdown() {
     countdownEl.innerHTML = `${minutes} : ${seconds}`;
     time--;
 }
-

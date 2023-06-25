@@ -89,6 +89,9 @@ class TestController extends Controller
         $tests = Test::where('variant_id', $id)->get();
         $count = count($tests);
         $testArrayNumber = $testArrayNumber + 1;
+
+        // dd($testArrayNumber);
+
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;

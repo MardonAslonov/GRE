@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="question bg-white p-2">
-                            Ball: 810
+                            Ball: 990
                         </div>
 
                     </h6>
