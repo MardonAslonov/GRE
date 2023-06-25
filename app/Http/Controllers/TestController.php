@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Result;
 use App\Models\Test;
+use App\Models\Time;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +44,28 @@ class TestController extends Controller
         $answer = $test->answer;
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
-        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+        $variant_id = $variant->id;
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+
+        $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+
+
+        // dd($time);
+        $aaa = 0;
+        foreach ($time as $key) {
+            $startTime = $key->startTime;
+            $key->delete();
+        }
+
+        dd($aaa);
+
+
+        $time = new Time();
+        $time->user_id = $user_id;
+        $time->variant_id = $variant_id;
+        $time->startTime = time();
+        $time->save();
+
         return view('test', [
             'nameImage' => $nameImage,
             'answer' => $answer,
@@ -52,7 +74,6 @@ class TestController extends Controller
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
             'numbersOfHasAnswer' => $numbersOfHasAnswer,
-
         ]);
     }
 
@@ -67,9 +88,12 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+
+
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,

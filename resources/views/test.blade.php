@@ -19,18 +19,15 @@
             <a class="navbar-brand" href="#!">GRE Subject test Fizika <i class="bi bi-emoji-smile"></i></a>
             <a class="navbar-brand" href="#!" id="timer">02:00:00</a>
 
-
             <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
             <script>
                 function incTimer() {
-
                     var currenthours = Math.floor(totalSecs / 3600);
                     var currentMinutes = Math.floor((totalSecs - totalSecs % 60 - currenthours * 3600) / 60);
                     var currentSeconds = totalSecs % 60;
                     if (currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
                     if (currentMinutes <= 9) currentMinutes = "0" + currentMinutes;
                     if (currenthours <= 9) currenthours = "0" + currenthours;
-
                     totalSecs--;
                     $("#timer").text(currenthours + ":" + currentMinutes + ":" + currentSeconds);
                     setTimeout('incTimer()', 1000);
@@ -45,7 +42,6 @@
                 });
             </script>
 
-            {{--  --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -59,16 +55,12 @@
                 <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
                 <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-primary px-1">testni tugatish</a>
-
-
-
-
-
             </div>
         </div>
     </nav>
     <div class="container mt-3  px-1">
         <?php $a = 1; ?>
+
         <?php $currentTest = $testArrayNumber + 1; ?>
         @while ($a <= $count)
             <?php $b = 0; ?>
@@ -88,7 +80,6 @@
             @endif
             <?php $a++; ?>
         @endwhile
-
     </div>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
@@ -161,12 +152,6 @@
     </div>
     <br>
     <br>
-
-
-
-
-
-
 </body>
 
 </html>
