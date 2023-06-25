@@ -17,9 +17,34 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">GRE Subject test Fizika <i class="bi bi-emoji-smile"></i></a>
-            {{--  --}}
-            <a class="navbar-brand" href="#!" id="countdown">02:00:00</a>
-            <script src="app.js"></script>
+            <a class="navbar-brand" href="#!" id="timer">02:00:00</a>
+
+
+            <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+            <script>
+                function incTimer() {
+
+                    var currenthours = Math.floor(totalSecs / 3600);
+                    var currentMinutes = Math.floor((totalSecs - totalSecs % 60 - currenthours * 3600) / 60);
+                    var currentSeconds = totalSecs % 60;
+                    if (currentSeconds <= 9) currentSeconds = "0" + currentSeconds;
+                    if (currentMinutes <= 9) currentMinutes = "0" + currentMinutes;
+                    if (currenthours <= 9) currenthours = "0" + currenthours;
+
+                    totalSecs--;
+                    $("#timer").text(currenthours + ":" + currentMinutes + ":" + currentSeconds);
+                    setTimeout('incTimer()', 1000);
+                }
+
+                totalSecs = 120 * 60;
+
+                $(document).ready(function() {
+                    $(function() {
+                        incTimer();
+                    });
+                });
+            </script>
+
             {{--  --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -136,6 +161,9 @@
     </div>
     <br>
     <br>
+
+
+
 
 
 

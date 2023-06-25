@@ -57,7 +57,8 @@
                         </div>
 
                         <div class="question bg-white p-2 border-bottom">
-                            Ishlanmagan: {{ $noAnswerAmount = 100 - ($correctAnswerAmount + $incorrectAnswerAmount) }} ta
+                            Ishlanmagan: {{ $noAnswerAmount = 100 - ($correctAnswerAmount + $incorrectAnswerAmount) }}
+                            ta
                         </div>
 
                         <div class="question bg-white p-2">
@@ -69,7 +70,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
