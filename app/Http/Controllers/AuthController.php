@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function auth(Request $request)
     {
         $credentials = [
-            'name' => $request->name,
+            'phone' => $request->phone,
             'password' => $request->password
         ];
         if (Auth::attempt($credentials)) {

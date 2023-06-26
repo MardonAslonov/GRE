@@ -24,7 +24,7 @@ class UserController extends Controller
             'password' => $request->password
         ];
         Auth::attempt($credentials);
-        return view('gre');
+        return view('success');
     }
 
     public function registrPage(Request $request)

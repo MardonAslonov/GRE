@@ -63,46 +63,23 @@
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                        GRE Subject Test <br />
-                        <span style="color: hsl(218, 81%, 75%)">Fizika (50% ustama) </span>
+                        Ro'yxatdan muvaffaqiyatli o'tdingiz. <br />
+                        <span style="color: hsl(218, 81%, 75%)">Tabriklaymiz! </span>
                     </h1>
                     <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                        GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
+                        ( parolingizni esdan chiqarmaslikni tavsiya qilamiz )
                     </p>
 
-                    <a href="{{ route('registrPage') }}"><button type="button"
-                            class="btn btn-primary btn-sm col-md-4 mb-4 justify-content-md-end">Ro'yxatdan
-                            o'tish</button></a>
+                    <a href="{{ route('login') }}"><button type="button"
+                            class="btn btn-primary btn-sm col-md-4 mb-4 justify-content-md-end">Tizimga kirish sahifasi
+                            </button></a>
                 </div>
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
                     <br>
                     <br>
-                    <div class="card bg-glass">
-                        <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('auth') }}">
-                                @csrf
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
-
-                                <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="phone" placeholder="+998001234567 (telefon raqamingiz)" />
-                                </div>
-
-                                <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" class="form-control" name="password"
-                                        placeholder="Parolingiz" />
-                                </div>
-
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-sm col-md-4 mb-4">Tizimga
-                                    kirish</button>
-                            </form>
-                        </div>
-                    </div>
                     <br>
                     <br>
                     <br>
