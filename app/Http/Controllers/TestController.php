@@ -37,6 +37,18 @@ class TestController extends Controller
         $number = $request->number;
         $id = $request->id;
         $tests = Test::where('variant_id', $id)->get();
+
+        $testChek = 0;
+        foreach ($tests as $test) {
+            $testChek = 1;
+        }
+
+        if ($testChek == 0) {
+            return view('null');
+        }
+
+        // dd($tests);
+
         $count = count($tests);
         $testArrayNumber = 0;
         $test = $tests[$testArrayNumber];

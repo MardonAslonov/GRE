@@ -12,7 +12,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required|max:7',
             'surname' => 'required|max:50',
             'phone' => 'required|max:13|min:13|unique:users,phone',
-            // 'phone' => 'required|numeric|unique:users,phone',
+            // 'phone' => 'required|integer',
             'password' => 'required|string|max:50',
         ];
     }
