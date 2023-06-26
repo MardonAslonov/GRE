@@ -36,7 +36,7 @@
                     $("#timer").text(currenthours + ":" + currentMinutes + ":" + currentSeconds);
                     setTimeout('incTimer()', 1000);
                 }
-                totalSecs = 1 * 60 - {{ $deltaTime }};
+                totalSecs = 120 * 60 - {{ $deltaTime }};
                 $(document).ready(function() {
                     $(function() {
                         incTimer();

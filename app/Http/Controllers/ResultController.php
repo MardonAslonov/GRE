@@ -103,7 +103,8 @@ class ResultController extends Controller
         foreach ($results as $result) {
             $incorrectAnswerAmount = $result->incorrectAnswer + $incorrectAnswerAmount;
         }
-        $results = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
+        Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
+        
         return view('result', [
             'correctAnswerAmount' => $correctAnswerAmount,
             'incorrectAnswerAmount' => $incorrectAnswerAmount,

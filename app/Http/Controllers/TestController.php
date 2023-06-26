@@ -153,6 +153,11 @@ class TestController extends Controller
         $tests = Test::where('variant_id', $id)->get();
         $count = count($tests);
         $testArrayNumber = $testArrayNumber + 1;
+
+        if ($testArrayNumber >= $count) {
+            $testArrayNumber = 0;
+        }
+
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
@@ -204,6 +209,11 @@ class TestController extends Controller
         $tests = Test::where('variant_id', $id)->get();
         $count = count($tests);
         $testArrayNumber = $testArrayNumber - 1;
+
+        if ($testArrayNumber <= -1) {
+            $testArrayNumber = $count - 1;
+        }
+
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;

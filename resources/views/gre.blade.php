@@ -72,7 +72,7 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                        href="{{ route('start',  ['number' => $variant->number, 'id' => $variant->id]  ) }}">Boshlash
+                                        href="{{ route('start', ['number' => $variant->number, 'id' => $variant->id]) }}">Boshlash
                                     </a></div>
                             </div>
                         </div>
@@ -81,10 +81,21 @@
             </div>
         </div>
     </section>
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>
+            <p class="m-0 text-center text-white"><i class="bi bi-telephone"></i> +998(99) 895-59-91</p>
+            <p class="m-0 text-center text-white"><head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon</p>
+
+            <div class="d-grid gap-2 d-md-block">
+                <a href="https://t.me/grefizikasertifikat" class="text-white"><h2><i class="bi bi-telegram"></i> <label for=""><h6> Telegram kanalimiz</h6></label></h2></a>
+
+                <h2><a href="https://www.youtube.com/channel/UCXehua_kBCImmJzCVx8Og2g" class="text-white"><i
+                            class="bi bi-youtube"></i> <label for=""><h6> YouTube sahifamiz</h6></label></a></h2>
+            </div>
+            {{-- <i class="bi bi-youtube"></i> --}}
         </div>
     </footer>
     <!-- Bootstrap core JS-->
