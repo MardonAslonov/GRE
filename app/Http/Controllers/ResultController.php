@@ -19,6 +19,11 @@ class ResultController extends Controller
         $testArrayNumber = $request->testArrayNumber;
         $answer = $request->answer;
         $answerUser = $request->answerUser;
+
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
@@ -78,12 +83,17 @@ class ResultController extends Controller
 
     public function finishTest(Request $request)
     {
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $number = $request->number;
         $variant = Variant::where('number', $number)->first();
-        $results = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+        $variant_id = $variant->id;
+        $results = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
 
-        $time = Time::where('user_id', $user_id)->where('variant_id', $variant->id)->delete();
+        Time::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
 
         $correctAnswerAmount = 0;
         $incorrectAnswerAmount = 0;
@@ -93,6 +103,7 @@ class ResultController extends Controller
         foreach ($results as $result) {
             $incorrectAnswerAmount = $result->incorrectAnswer + $incorrectAnswerAmount;
         }
+        $results = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
         return view('result', [
             'correctAnswerAmount' => $correctAnswerAmount,
             'incorrectAnswerAmount' => $incorrectAnswerAmount,

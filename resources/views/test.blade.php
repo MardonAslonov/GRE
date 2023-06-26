@@ -28,10 +28,15 @@
                     if (currentMinutes <= 9) currentMinutes = "0" + currentMinutes;
                     if (currenthours <= 9) currenthours = "0" + currenthours;
                     totalSecs--;
+
+                    if (totalSecs <= 0) {
+                        document.getElementById('clickButton').click();
+                    }
+
                     $("#timer").text(currenthours + ":" + currentMinutes + ":" + currentSeconds);
                     setTimeout('incTimer()', 1000);
                 }
-                totalSecs = 120 * 60 - {{$deltaTime}};
+                totalSecs = 1 * 60 - {{ $deltaTime }};
                 $(document).ready(function() {
                     $(function() {
                         incTimer();
@@ -51,7 +56,8 @@
                 </button>
                 <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
-                <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-primary px-1">testni tugatish</a>
+                <a href="{{ route('finishTest', $number) }}" class="btn btn-outline-primary px-1"
+                    id="clickButton">testni tugatish</a>
             </div>
         </div>
     </nav>

@@ -70,6 +70,8 @@
             </div>
         </div>
     </div>
+    {{-- {{ Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete(); }} --}}
+    {{ Auth::logout() }}
 </body>
 
 </html>

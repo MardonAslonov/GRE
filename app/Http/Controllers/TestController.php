@@ -42,6 +42,11 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
@@ -88,6 +93,11 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
@@ -134,6 +144,11 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
@@ -180,6 +195,11 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
+
+        if (Auth::User() == null) {
+            return view('login');
+        }
+
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
