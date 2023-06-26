@@ -18,7 +18,6 @@
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">GRE Subject test Fizika <i class="bi bi-emoji-smile"></i></a>
             <a class="navbar-brand" href="#!" id="timer">02:00:00</a>
-
             <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
             <script>
                 function incTimer() {
@@ -32,9 +31,7 @@
                     $("#timer").text(currenthours + ":" + currentMinutes + ":" + currentSeconds);
                     setTimeout('incTimer()', 1000);
                 }
-
-                totalSecs = 120 * 60;
-
+                totalSecs = 120 * 60 - {{$deltaTime}};
                 $(document).ready(function() {
                     $(function() {
                         incTimer();

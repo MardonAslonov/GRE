@@ -48,23 +48,22 @@ class TestController extends Controller
         $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
 
         $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
-
-
-        // dd($time);
-        $aaa = 0;
+        $startTime = 0;
         foreach ($time as $key) {
             $startTime = $key->startTime;
             $key->delete();
         }
-
-        dd($aaa);
-
-
         $time = new Time();
         $time->user_id = $user_id;
         $time->variant_id = $variant_id;
-        $time->startTime = time();
+        if ($startTime == 0) {
+            $time->startTime = time();
+        } else {
+            $time->startTime = $startTime;
+        }
         $time->save();
+        $currentTime = time();
+        $deltaTime = $currentTime - $time->startTime;
 
         return view('test', [
             'nameImage' => $nameImage,
@@ -74,6 +73,7 @@ class TestController extends Controller
             'number' => $number,
             'testArrayNumber' => $testArrayNumber,
             'numbersOfHasAnswer' => $numbersOfHasAnswer,
+            'deltaTime' => $deltaTime,
         ]);
     }
 
@@ -88,11 +88,28 @@ class TestController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
-
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
-        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+        $variant_id = $variant->id;
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
 
+        $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+        $startTime = 0;
+        foreach ($time as $key) {
+            $startTime = $key->startTime;
+            $key->delete();
+        }
+        $time = new Time();
+        $time->user_id = $user_id;
+        $time->variant_id = $variant_id;
+        if ($startTime == 0) {
+            $time->startTime = time();
+        } else {
+            $time->startTime = $startTime;
+        }
+        $time->save();
+        $currentTime = time();
+        $deltaTime = $currentTime - $time->startTime;
 
         return view('test', [
             'nameImage' => $nameImage,
@@ -102,6 +119,7 @@ class TestController extends Controller
             'testArrayNumber' => $testArrayNumber,
             'answer' => $answer,
             'numbersOfHasAnswer' => $numbersOfHasAnswer,
+            'deltaTime' => $deltaTime,
         ]);
     }
 
@@ -113,15 +131,32 @@ class TestController extends Controller
         $tests = Test::where('variant_id', $id)->get();
         $count = count($tests);
         $testArrayNumber = $testArrayNumber + 1;
-
-        // dd($testArrayNumber);
-
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
-        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+        $variant_id = $variant->id;
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+
+        $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+        $startTime = 0;
+        foreach ($time as $key) {
+            $startTime = $key->startTime;
+            $key->delete();
+        }
+        $time = new Time();
+        $time->user_id = $user_id;
+        $time->variant_id = $variant_id;
+        if ($startTime == 0) {
+            $time->startTime = time();
+        } else {
+            $time->startTime = $startTime;
+        }
+        $time->save();
+        $currentTime = time();
+        $deltaTime = $currentTime - $time->startTime;
+
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
@@ -130,6 +165,7 @@ class TestController extends Controller
             'testArrayNumber' => $testArrayNumber,
             'answer' => $answer,
             'numbersOfHasAnswer' => $numbersOfHasAnswer,
+            'deltaTime' => $deltaTime,
         ]);
     }
 
@@ -146,7 +182,27 @@ class TestController extends Controller
         $answer = $test->answer;
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
-        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant->id)->get();
+        $variant_id = $variant->id;
+        $numbersOfHasAnswer = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+
+        $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
+        $startTime = 0;
+        foreach ($time as $key) {
+            $startTime = $key->startTime;
+            $key->delete();
+        }
+        $time = new Time();
+        $time->user_id = $user_id;
+        $time->variant_id = $variant_id;
+        if ($startTime == 0) {
+            $time->startTime = time();
+        } else {
+            $time->startTime = $startTime;
+        }
+        $time->save();
+        $currentTime = time();
+        $deltaTime = $currentTime - $time->startTime;
+
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
@@ -155,6 +211,7 @@ class TestController extends Controller
             'testArrayNumber' => $testArrayNumber,
             'answer' => $answer,
             'numbersOfHasAnswer' => $numbersOfHasAnswer,
+            'deltaTime' => $deltaTime,
         ]);
     }
 }
