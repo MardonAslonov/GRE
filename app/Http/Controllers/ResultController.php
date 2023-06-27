@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Number;
 use App\Models\Result;
 use App\Models\Test;
 use App\Models\Time;
+use App\Models\Total;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -103,12 +105,32 @@ class ResultController extends Controller
         foreach ($results as $result) {
             $incorrectAnswerAmount = $result->incorrectAnswer + $incorrectAnswerAmount;
         }
+        $rawScores = $correctAnswerAmount - $incorrectAnswerAmount / 4;
+        $totalOld = Total::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
+
+        $total = new Total();
+        $total->user_id = $user_id;
+        $total->variant_id = $variant_id;
+        $total->rawScores = $rawScores;
+        $total->save();
+
+
+        foreach ($results as $result) {
+            if ($result->incorrectAnswer == 1) {
+                $numberIncorrect = new Number();
+                $numberIncorrect->total_id = $total->id;
+                $numberIncorrect->number = $result->numberQuestion;
+                $numberIncorrect->save();
+            }
+        }
+
         Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
-        
+
         return view('result', [
             'correctAnswerAmount' => $correctAnswerAmount,
             'incorrectAnswerAmount' => $incorrectAnswerAmount,
             'number' => $number,
+            'rawScores' => $rawScores,
         ]);
     }
 }

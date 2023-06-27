@@ -90,12 +90,16 @@
             <p class="m-0 text-center text-white"><head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon</p>
 
             <div class="d-grid gap-2 d-md-block">
-                <a href="https://t.me/grefizikasertifikat" class="text-white"><h2><i class="bi bi-telegram"></i> <label for=""><h6> Telegram kanalimiz</h6></label></h2></a>
+                <a href="https://t.me/grefizikasertifikat" class="text-white">
+                    <h5><i class="bi bi-telegram me-md-2"></i><label for="">Telegram kanalimiz
+                        </label></h5>
+                </a>
 
-                <h2><a href="https://www.youtube.com/channel/UCXehua_kBCImmJzCVx8Og2g" class="text-white"><i
-                            class="bi bi-youtube"></i> <label for=""><h6> YouTube sahifamiz</h6></label></a></h2>
+                <a href="https://www.youtube.com/channel/UCXehua_kBCImmJzCVx8Og2g" class="text-white">
+                    <h5><i class="bi bi-youtube me-md-2"></i><label for=""> YouTube sahifamiz
+                        </label></h5>
+                </a>
             </div>
-            {{-- <i class="bi bi-youtube"></i> --}}
         </div>
     </footer>
     <!-- Bootstrap core JS-->
