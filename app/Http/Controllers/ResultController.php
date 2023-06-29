@@ -7,6 +7,7 @@ use App\Models\Result;
 use App\Models\Test;
 use App\Models\Time;
 use App\Models\Total;
+use App\Models\User;
 use App\Models\Variant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -108,9 +109,18 @@ class ResultController extends Controller
         $rawScores = $correctAnswerAmount - $incorrectAnswerAmount / 4;
         $totalOld = Total::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
 
+        $user = User::where('id', $user_id)->get();
+
+        foreach ($user as $item) {
+            $userName = $item->name;
+            $userSurname = $item->surname;
+        }
+
         $total = new Total();
         $total->user_id = $user_id;
         $total->variant_id = $variant_id;
+        $total->userName = $userName;
+        $total->userSurname = $userSurname;
         $total->rawScores = $rawScores;
         $total->save();
 

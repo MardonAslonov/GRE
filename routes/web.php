@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NumberController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TotalController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VariantController;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +15,9 @@ Route::get('/', function () {
 
 Route::post('/auth', [AuthController::class, 'auth'])->name('auth');
 Route::get('/registrPage', [UserController::class, 'registrPage'])->name('registrPage');
+
+Route::get('/home', [VariantController::class, 'home'])->name('home');
+
 
 // Admin
 Route::get('/admin', function () {
@@ -38,9 +43,17 @@ Route::get('/finishTest/{number}', [ResultController::class, 'finishTest'])->nam
 
 
 Route::post('/userCreate', [UserController::class, 'userCreate'])->name('userCreate');
-
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/ratingPage/{number}', [TotalController::class, 'ratingPage'])->name('ratingPage');
+Route::get('/ratingEndPage/{number}', [TotalController::class, 'ratingEndPage'])->name('ratingEndPage');
+
+
+Route::get('/numberIncorrect', [NumberController::class, 'numberIncorrect'])->name('numberIncorrect');
+
+
+
+Route::get('/ratingAll', [TotalController::class, 'ratingAll'])->name('ratingAll');
 
 // Route::group(['middleware' => ["auth:web"]], function () {
 //     Route::get('/', function () { return view('layouts.welcome'); })->name('welcome');

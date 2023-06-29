@@ -24,8 +24,9 @@ return new class extends Migration
                 ->on('variants')
                 ->onDelete('cascade');
 
+            $table->string('userName');
+            $table->string('userSurname');
             $table->string('rawScores');
-
             $table->timestamps();
         });
     }

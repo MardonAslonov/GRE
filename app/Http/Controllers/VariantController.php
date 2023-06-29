@@ -18,4 +18,12 @@ class VariantController extends Controller
         $variant->save();
         return 'Variant joylandi';
     }
+
+    public function home(Request $request)
+    {
+        $variants = Variant::all();
+        return view('gre', [
+            'variants' => $variants,
+        ]);
+    }
 }
