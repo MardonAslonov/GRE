@@ -33,11 +33,31 @@
     <div class="container mt-5">
         <div class="justify-content-center row">
             <div class="col-md-5 col-lg-10">
+                <label for="">
+                    @if ($total_id != 0)
+                        <h5>Siz to'plagan Raw Scores: {{ $total->rawScores }}</h5><br>
+                        <h6>{{ $number }} varianti uchun siz xato javob bergan savollar raqami.</h6>
+                    @else
+                        <h6>{{ $number }} variantini hali ishlamadingiz.</h6>
+                    @endif
+                </label>
+                <div class="border">
+                    <table class="table table-sm">
+                        <tbody>
+                            @foreach ($numbersIncorrect as $item)
+                                <tr>
+                                    {{ $item->number }};
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <br>
                 <div class="border">
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col" colspan="4">{{ $number }}</th>
+                                <th scope="col" colspan="4" class="text-center">{{ $number }}</th>
                             </tr>
                             <tr>
                                 <th scope="col">№</th>

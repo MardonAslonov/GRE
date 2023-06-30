@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Number;
 use App\Models\Total;
 use App\Models\Variant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TotalController extends Controller
@@ -17,14 +19,24 @@ class TotalController extends Controller
         $totals = DB::table('totals')->where('variant_id', $variant_id)
         ->orderByRaw('rawScores DESC')->paginate(10);
 
+        $user_id = Auth::User()->id;
+        $total = Total::where('variant_id', $variant_id)->where('user_id', $user_id)->first();
 
-        // dd($totals);
-
+        if ($total != null) {
+            $total_id = $total->id;
+        } else {
+            $total_id = 0;
+            $total = 0;
+        }
+        $numbersIncorrect = Number::where('total_id', $total_id)->get();
 
         return view('rating', [
             'totals' => $totals,
-            // 'variant_id' => $variant_id,
             'number' => $number,
+            'numbersIncorrect' => $numbersIncorrect,
+            'total_id' => $total_id,
+            'total' => $total,
+
         ]);
     }
 
@@ -36,11 +48,8 @@ class TotalController extends Controller
         $totals = DB::table('totals')->where('variant_id', $variant_id)
         ->orderByRaw('rawScores DESC')->paginate(10);
 
-        // dd($totals);
-
         return view('ratingEnd', [
             'totals' => $totals,
-            // 'variant_id' => $variant_id,
             'number' => $number,
         ]);
     }

@@ -37,7 +37,6 @@
                 <div class="border">
                     <table class="table table-sm">
                         <tbody>
-                            <?php $a = 1; ?>
                             @foreach ($numbersIncorrect as $item)
                                 <tr>
                                     {{ $item->number }};

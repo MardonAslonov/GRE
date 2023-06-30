@@ -22,8 +22,6 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4"></ul>
-                {{-- <a href="{{ route('home') }}" class="btn btn-outline-dark me-md-2 px-1">asosiy <i
-                        class="bi bi-house-fill"></i> --}}
                 <a href="{{ route('logout') }}" class="btn btn-outline-dark me-md-2 px-1">chiqish <i
                         class="bi bi-door-open-fill"></i></a>
             </div>
@@ -37,7 +35,7 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col" colspan="4">{{ $number }}</th>
+                                <th scope="col" colspan="4" class="text-center">{{ $number }}</th>
                             </tr>
                             <tr>
                                 <th scope="col">№</th>
