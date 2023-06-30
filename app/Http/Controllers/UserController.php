@@ -18,7 +18,6 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->password = bcrypt($request->password);
         $user->save();
-        // return $this->auth($request->name,$request->password);
         $credentials =[
             'name' => $request->name,
             'password' => $request->password

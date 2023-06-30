@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
         <style>
@@ -72,7 +71,7 @@
 
                     <a href="{{ route('login') }}"><button type="button"
                             class="btn btn-primary btn-sm col-md-4 mb-4 justify-content-md-end">Tizimga kirish sahifasi
-                            </button></a>
+                        </button></a>
                 </div>
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">

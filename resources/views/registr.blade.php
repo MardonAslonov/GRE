@@ -72,7 +72,6 @@
                         <div class="card-body px-4 py-5 px-md-5">
                             <form method="post" action="{{ route('userCreate') }}">
                                 @csrf
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
@@ -87,19 +86,16 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <!-- Phone input -->
                                 <div class="form-outline mb-4">
                                     <input type="text" class="form-control" name="phone"
                                         placeholder="+998001234567 (telefon raqamingiz)" />
                                 </div>
-
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <input type="password" class="form-control" name="password"
                                         placeholder="parol o'rnating" />
                                 </div>
-
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-sm col-md-4 mb-4">Ro'yxatdan
                                     o'tish</button>

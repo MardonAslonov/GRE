@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Variant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VariantController extends Controller
 {
@@ -21,6 +22,9 @@ class VariantController extends Controller
 
     public function home(Request $request)
     {
+        if (Auth::User() == null) {
+            return view('login');
+        }
         $variants = Variant::all();
         return view('gre', [
             'variants' => $variants,

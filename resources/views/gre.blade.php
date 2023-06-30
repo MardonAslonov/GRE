@@ -87,9 +87,7 @@
             </div>
         </div>
     </section>
-
     <!-- Footer-->
-
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>
@@ -98,13 +96,11 @@
 
                 <head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon
             </p>
-
             <div class="d-grid gap-2 d-md-block">
                 <a href="https://t.me/grefizikasertifikat" class="text-white">
                     <h5><i class="bi bi-telegram me-md-2"></i><label for="">Telegram kanalimiz
                         </label></h5>
                 </a>
-
                 <a href="https://www.youtube.com/channel/UCXehua_kBCImmJzCVx8Og2g" class="text-white">
                     <h5><i class="bi bi-youtube me-md-2"></i><label for=""> YouTube sahifamiz
                         </label></h5>
@@ -112,8 +108,6 @@
             </div>
         </div>
     </footer>
-
-
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

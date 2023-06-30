@@ -27,7 +27,6 @@
             </div>
         </div>
     </nav>
-    <br><br>
     <div class="container mt-5">
         <div class="justify-content-center row">
             <div class="col-md-5 col-lg-10">
@@ -62,7 +61,7 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>

@@ -22,11 +22,9 @@ class ResultController extends Controller
         $testArrayNumber = $request->testArrayNumber;
         $answer = $request->answer;
         $answerUser = $request->answerUser;
-
         if (Auth::User() == null) {
             return view('login');
         }
-
         $user_id = Auth::User()->id;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
@@ -53,7 +51,6 @@ class ResultController extends Controller
         $test = $tests[$testArrayNumber];
         $nameImage = $test->nameImage;
         $answer = $test->answer;
-
         $time = Time::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
         $startTime = 0;
         foreach ($time as $key) {
@@ -71,7 +68,6 @@ class ResultController extends Controller
         $time->save();
         $currentTime = time();
         $deltaTime = $currentTime - $time->startTime;
-
         return view('test', [
             'nameImage' => $nameImage,
             'id' => $id,
@@ -89,15 +85,12 @@ class ResultController extends Controller
         if (Auth::User() == null) {
             return view('login');
         }
-
         $user_id = Auth::User()->id;
         $number = $request->number;
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
         $results = Result::where('user_id', $user_id)->where('variant_id', $variant_id)->get();
-
         Time::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
-
         $correctAnswerAmount = 0;
         $incorrectAnswerAmount = 0;
         foreach ($results as $result) {
@@ -108,14 +101,11 @@ class ResultController extends Controller
         }
         $rawScores = $correctAnswerAmount - $incorrectAnswerAmount / 4;
         $totalOld = Total::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
-
         $user = User::where('id', $user_id)->get();
-
         foreach ($user as $item) {
             $userName = $item->name;
             $userSurname = $item->surname;
         }
-
         $total = new Total();
         $total->user_id = $user_id;
         $total->variant_id = $variant_id;
@@ -123,8 +113,6 @@ class ResultController extends Controller
         $total->userSurname = $userSurname;
         $total->rawScores = $rawScores;
         $total->save();
-
-
         foreach ($results as $result) {
             if ($result->incorrectAnswer == 1) {
                 $numberIncorrect = new Number();
@@ -133,9 +121,7 @@ class ResultController extends Controller
                 $numberIncorrect->save();
             }
         }
-
         Result::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
-
         return view('result', [
             'correctAnswerAmount' => $correctAnswerAmount,
             'incorrectAnswerAmount' => $incorrectAnswerAmount,

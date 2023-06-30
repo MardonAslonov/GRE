@@ -43,7 +43,6 @@
                     });
                 });
             </script>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -76,7 +75,6 @@
                     <?php $b = 1; ?>
                 @endif
             @endforeach
-
             @if ($b == 0)
                 <a href="{{ route('startSelect', ['id' => $id, 'testArrayNumber' => $a - 1, 'number' => $number]) }}"><button
                         type="button" class="btn btn-outline-secondary px-1 mt-1">{{ $a }}</button></a>

@@ -29,7 +29,6 @@
             </div>
         </div>
     </nav>
-    <br><br>
     <div class="container mt-5">
         <div class="justify-content-center row">
             <div class="col-md-5 col-lg-10">
@@ -82,9 +81,79 @@
                 <br>
                 {{ $totals->appends(['number' => $number])->links() }}
             </div>
+            <div class="col-md-5 col-lg-5">
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="4" class="text-center">Balni bilish jadvali</th>
+                        </tr>
+                        <tr>
+                            <th scope="col" class="text-center">Ball</th>
+                            <th scope="col" class="text-center">Form A<br>(Raw Scores)</th>
+                            <th scope="col" class="text-center">Form B <br>(Raw Scores)</th>
+                            <th scope="col" class="text-center">Form C <br>(Raw Scores)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">900</th>
+                            <td class="text-center">
+                                <h4>73</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>68-69</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>64</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">800</th>
+                            <td class="text-center">
+                                <h4>58-59</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>54-55</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>50</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">700</th>
+                            <td class="text-center">
+                                <h4>44</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>41</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>38</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">600</th>
+                            <td class="text-center">
+                                <h4>30</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>27</h4>
+                            </td>
+                            <td class="text-center">
+                                <h4>27</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="4" scope="row" class="text-center"><br>Raw Scores = To'g'ri - ( Noto'g'ri
+                                / 4
+                                ) <br><br></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br>
+    <br><br>
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>

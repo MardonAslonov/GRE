@@ -17,11 +17,12 @@ class TotalController extends Controller
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
         $totals = DB::table('totals')->where('variant_id', $variant_id)
-        ->orderByRaw('rawScores DESC')->paginate(10);
-
+            ->orderByRaw('rawScores DESC')->paginate(10);
+        if (Auth::User() == null) {
+            return view('login');
+        }
         $user_id = Auth::User()->id;
         $total = Total::where('variant_id', $variant_id)->where('user_id', $user_id)->first();
-
         if ($total != null) {
             $total_id = $total->id;
         } else {
@@ -29,7 +30,6 @@ class TotalController extends Controller
             $total = 0;
         }
         $numbersIncorrect = Number::where('total_id', $total_id)->get();
-
         return view('rating', [
             'totals' => $totals,
             'number' => $number,
@@ -46,8 +46,7 @@ class TotalController extends Controller
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
         $totals = DB::table('totals')->where('variant_id', $variant_id)
-        ->orderByRaw('rawScores DESC')->paginate(10);
-
+            ->orderByRaw('rawScores DESC')->paginate(10);
         return view('ratingEnd', [
             'totals' => $totals,
             'number' => $number,
@@ -56,6 +55,9 @@ class TotalController extends Controller
 
     public function ratingAll(Request $request)
     {
+        if (Auth::User() == null) {
+            return view('login');
+        }
         $variants = Variant::all();
         return view('ratingAll', [
             'variants' => $variants
