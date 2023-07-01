@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>GRE Variant</title>
+    <title>GRE Uzbekistan</title>
 </head>
 
 <body>
 
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
-        <br>
         <br>
         <style>
             .background-radial-gradient {
@@ -57,17 +56,19 @@
                 backdrop-filter: saturate(200%) blur(25px);
             }
         </style>
-
+        <br><br><br>
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                     <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
                         GRE Variantlari <br />
-                        <span style="color: hsl(218, 81%, 75%)">Bazaga joylash</span>
+                        <span style="color: hsl(218, 81%, 75%)">Bazadan o'chirish</span>
                     </h1>
                     {{-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
                         GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
                     </p> --}}
+
+
                 </div>
 
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -75,29 +76,36 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form method="post" action="{{ route('variantCreate') }}" enctype="multipart/form-data">
+                            <form method="get" action="{{ route('variantDelete') }}" enctype="multipart/form-data">
                                 @csrf
-                                <!-- 2 column grid layout with text inputs for the first and last names -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="number"
-                                        placeholder="variant nomeri" />
+                                <div class="mb-3">
+                                    <select class="form-select" name="variantId" required>
+                                        <option selected disabled value="">Choose the variant</option>
+                                        @foreach ($variants as $variant)
+                                            <option value="{{ $variant->id }}">{{ $variant->number }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                <div class="form-outline mb-4">
+                                {{-- <div class="form-outline mb-4">
                                     <input type="file" class="form-control" name="image" required>
-                                    <label class="form-label" for="form3Example2">Titul rasmi</label>
-                                </div>
+                                    <label class="form-label" for="form3Example2">Savol rasmi</label>
+                                </div> --}}
+                                {{-- <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" name="nameImage" placeholder="savol nomi"/> --}}
+                                {{-- <label class="form-label" for="form3Example3">name image</label> --}}
+                                {{-- </div> --}}
+                                {{-- <div class="form-outline mb-4">
+                                    <input type="text" class="form-control" name="answer" placeholder="to'g'ri javob (masalan A )"/>
+                                </div> --}}
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-sm col-md-6">Bazaga
-                                    joylash</button>
+                                <button type="submit" class="btn btn-primary btn-sm col-md-6 mb-6">Variantni o'chirish</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
+        <br><br><br><br>
     </section>
 </body>
 

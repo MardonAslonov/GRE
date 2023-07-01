@@ -90,21 +90,22 @@
                                 </div>
                                 {{-- <div class="form-outline mb-4">
                                     <input type="text" class="form-control" name="nameImage" placeholder="savol nomi"/> --}}
-                                    {{-- <label class="form-label" for="form3Example3">name image</label> --}}
+                                {{-- <label class="form-label" for="form3Example3">name image</label> --}}
                                 {{-- </div> --}}
                                 <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="answer" placeholder="to'g'ri javob (masalan A )"/>
+                                    <input type="text" class="form-control" name="answer"
+                                        placeholder="to'g'ri javob (masalan A )" />
                                 </div>
                                 <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-block mb-4">
-                                    Bazaga joylash
-                                </button>
+                                <button type="submit" class="btn btn-primary btn-sm col-md-6">Bazaga
+                                    joylash</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
     </section>
 </body>
 

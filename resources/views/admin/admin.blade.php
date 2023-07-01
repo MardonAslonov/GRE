@@ -53,7 +53,7 @@
         </div>
     </header>
     <!-- Section-->
-
+    <br>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
 
@@ -69,18 +69,18 @@
                         <i class="bi bi-file-check-fill"></i>
                     </a>
                 </div>
-                <br><br>
+                <br><br><br>
             </div>
 
             <div class="col-md-5 col-lg-4">
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <a class="btn btn-outline-danger" href="" role="button">Savol o'chirish
+                    <a class="btn btn-outline-danger" href="testDeletePage" role="button">Savol o'chirish
                         <i class="bi bi-trash-fill"></i>
                     </a>
                 </div>
                 <br>
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <a class="btn btn-outline-danger" href="" role="button">Variant o'chirish
+                    <a class="btn btn-outline-danger" href="variantDeletePage" role="button">Variant o'chirish
                         <i class="bi bi-trash-fill"></i>
                     </a>
                 </div>

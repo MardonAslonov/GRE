@@ -22,12 +22,22 @@ Route::get('/home', [VariantController::class, 'home'])->name('home');
 Route::get('/admin', function () {
     return view('admin.admin');
 })->name('admin');
-Route::get('/testCreatePage', [TestController::class, 'testCreatePage'])->name('testCreatePage');
+
+Route::get('/testCreatePage', [VariantController::class, 'testCreatePage'])->name('testCreatePage');
+Route::get('/testDeletePage', [VariantController::class, 'testDeletePage'])->name('testDeletePage');
+Route::get('/testGet', [VariantController::class, 'testGet'])->name('testGet');
+Route::get('/testDelete', [VariantController::class, 'testDelete'])->name('testDelete');
+Route::post('/variantCreate', [VariantController::class, 'variantCreate'])->name('variantCreate');
+Route::get('/variantDeletePage', [VariantController::class, 'variantDeletePage'])->name('variantDeletePage');
+Route::get('/variantDelete', [VariantController::class, 'variantDelete'])->name('variantDelete');
+
+
+
+
 Route::get('/variantCreatePage', function () {
     return view('admin.variantCreatePage');
 })->name('variantCreatePage');
-Route::post('/testCreate', [TestController::class, 'testCreate'])->name('testCreate');
-Route::post('/variantCreate', [VariantController::class, 'variantCreate'])->name('variantCreate');
+Route::post('/testCreate', [VariantController::class, 'testCreate'])->name('testCreate');
 //
 
 // User
