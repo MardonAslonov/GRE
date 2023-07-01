@@ -18,7 +18,6 @@ Route::get('/registrPage', [UserController::class, 'registrPage'])->name('regist
 
 Route::get('/home', [VariantController::class, 'home'])->name('home');
 
-
 // Admin
 Route::get('/admin', function () {
     return view('admin.admin');
