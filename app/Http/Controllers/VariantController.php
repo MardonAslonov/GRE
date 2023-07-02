@@ -20,8 +20,8 @@ class VariantController extends Controller
         $file = $request->file('image');
         $name = $file->getClientOriginalName();
         $variant->nameImage = $name;
-        $file->storeAs('public/variant', $name);
         $variant->save();
+        $file->storeAs('public/variant', $name);
         return 'Variant joylandi';
     }
 
@@ -58,8 +58,8 @@ class VariantController extends Controller
         $name = $file->getClientOriginalName();
         $test->nameImage = $name;
         $test->answer = $request->answer;
-        $file->storeAs('public/test', $name);
         $test->save();
+        $file->storeAs('public/test', $name);
         return 'Test joylandi';
     }
 
@@ -118,13 +118,13 @@ class VariantController extends Controller
         }
         $variantId = $request->variantId;
         $tests = Test::where('variant_id', $variantId)->get();
+        $variant = Variant::where('id', $variantId)->first();
+        $fileNameVariant = $variant->nameImage;
+        $variant->delete();
         foreach ($tests as $test) {
             $fileNameTest = $test->nameImage;
             unlink(storage_path('app/public/test/' . $fileNameTest));
         }
-        $variant = Variant::where('id', $variantId)->first();
-        $fileNameVariant = $variant->nameImage;
-        $variant->delete();
         unlink(storage_path('app/public/variant/' . $fileNameVariant));
         return 'Variant savollari bilan birgalikda o\'chirildi';
     }

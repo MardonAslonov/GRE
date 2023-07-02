@@ -58,7 +58,6 @@
     <br>
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
-
             <div class="col-md-5 col-lg-4">
                 <div class="d-grid gap-2 col-8 mx-auto">
                     <a class="btn btn-outline-success" href="variantCreatePage" role="button">Variant qo'shish
@@ -73,7 +72,6 @@
                 </div>
                 <br><br><br>
             </div>
-
             <div class="col-md-5 col-lg-4">
                 <div class="d-grid gap-2 col-8 mx-auto">
                     <a class="btn btn-outline-danger" href="testDeletePage" role="button">Savol o'chirish
@@ -87,7 +85,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="col-md-5 col-lg-4">
                 <div class="d-grid gap-2 col-8 mx-auto">
                     <a class="btn btn-outline-primary" href="userList" role="button">Foydalanuvchilar ro'yxati
@@ -112,8 +109,6 @@
 
         </div>
     </div>
-
-
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">

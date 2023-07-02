@@ -10,12 +10,27 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VariantController;
 use Illuminate\Support\Facades\Route;
 
+// User
 Route::get('/', function () {
     return view('login');
 })->name('login');
-Route::post('/auth', [AuthController::class, 'auth'])->name('auth');
 Route::get('/registrPage', [UserController::class, 'registrPage'])->name('registrPage');
+Route::post('/userCreate', [UserController::class, 'userCreate'])->name('userCreate');
+Route::post('/auth', [AuthController::class, 'auth'])->name('auth');
 Route::get('/home', [VariantController::class, 'home'])->name('home');
+Route::get('/ratingAll', [TotalController::class, 'ratingAll'])->name('ratingAll');
+Route::get('/ratingPage/{number}', [TotalController::class, 'ratingPage'])->name('ratingPage');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// User doing test
+Route::get('/start', [TestController::class, 'start'])->name('start');
+Route::get('/startSelect', [TestController::class, 'startSelect'])->name('startSelect');
+Route::get('/nextQuestion', [TestController::class, 'nextQuestion'])->name('nextQuestion');
+Route::get('/previousQuestion', [TestController::class, 'previousQuestion'])->name('previousQuestion');
+Route::get('/answerUser', [ResultController::class, 'answerUser'])->name('answerUser');
+Route::get('/finishTest/{number}', [ResultController::class, 'finishTest'])->name('finishTest');
+Route::get('/numberIncorrect', [NumberController::class, 'numberIncorrect'])->name('numberIncorrect');
+Route::get('/ratingEndPage/{number}', [TotalController::class, 'ratingEndPage'])->name('ratingEndPage');
 
 // Admin
 Route::get('/admin', function () {
@@ -33,50 +48,5 @@ Route::get('/testDeletePage', [VariantController::class, 'testDeletePage'])->nam
 Route::get('/testGet', [VariantController::class, 'testGet'])->name('testGet');
 Route::get('/testDelete', [VariantController::class, 'testDelete'])->name('testDelete');
 Route::get('/userList', [UserController::class, 'userList'])->name('userList');
-
 Route::get('/answerListPage', [TimeController::class, 'answerListPage'])->name('answerListPage');
 Route::get('/answerList', [TimeController::class, 'answerList'])->name('answerList');
-
-
-
-
-//
-
-// User
-Route::get('/start', [TestController::class, 'start'])->name('start');
-Route::get('/startSelect', [TestController::class, 'startSelect'])->name('startSelect');
-Route::get('/nextQuestion', [TestController::class, 'nextQuestion'])->name('nextQuestion');
-Route::get('/previousQuestion', [TestController::class, 'previousQuestion'])->name('previousQuestion');
-Route::get('/answerUser', [ResultController::class, 'answerUser'])->name('answerUser');
-Route::get('/finishTest/{number}', [ResultController::class, 'finishTest'])->name('finishTest');
-
-
-
-
-Route::post('/userCreate', [UserController::class, 'userCreate'])->name('userCreate');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::get('/ratingPage/{number}', [TotalController::class, 'ratingPage'])->name('ratingPage');
-Route::get('/ratingEndPage/{number}', [TotalController::class, 'ratingEndPage'])->name('ratingEndPage');
-
-
-Route::get('/numberIncorrect', [NumberController::class, 'numberIncorrect'])->name('numberIncorrect');
-
-
-
-Route::get('/ratingAll', [TotalController::class, 'ratingAll'])->name('ratingAll');
-
-// Route::group(['middleware' => ["auth:web"]], function () {
-//     Route::get('/', function () { return view('layouts.welcome'); })->name('welcome');
-//     Route::get('list',[ProjectController::class,'list'])->name('list');
-//     Route::get('create',[ProjectController::class,'createPage'])->name('createPage')->middleware('isAdmin:web');
-//     Route::post('create',[ProjectController::class,'create'])->name('create')->middleware('isAdmin:web');
-//     Route::get('delete/{id}',[ProjectController::class,'delete'])->name('delete')->middleware('isAdmin:web');
-
-//     Route::post('answer',[AnswerController::class,'answer'])->name('answer');
-//     Route::get('result',[AnswerController::class,'result'])->name('result');
-//     Route::get('score',[AnswerController::class,'score'])->name('score');
-
-
-//     Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-//  });

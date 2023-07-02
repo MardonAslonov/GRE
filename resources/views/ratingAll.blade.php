@@ -40,7 +40,7 @@
                         <div class="border">
                             <div class="mb-0">
                                 <select class="form-select" name="number" required>
-                                    <option selected disabled value="">Choose the variant</option>
+                                    <option selected disabled value="">Variantni tanlang</option>
                                     @foreach ($variants as $variant)
                                         <option value="{{ $variant->number }}">{{ $variant->number }}</option>
                                     @endforeach
@@ -68,8 +68,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>
             <p class="m-0 text-center text-white"><i class="bi bi-telephone"></i> +998(99) 895-59-91</p>
             <p class="m-0 text-center text-white">
-
-                <head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon
+                <i class="bi bi-telegram"></i> @Aslonov_Mardon
             </p>
             <div class="d-grid gap-2 d-md-block">
                 <a href="https://t.me/grefizikasertifikat" class="text-white">
@@ -81,6 +80,10 @@
                         </label></h5>
                 </a>
             </div>
+        </div>
+        <div class="container">
+            <p class="m-0 text-center text-white"><i class="bi bi-credit-card-fill"></i> Faoliyatimiz rivoji uchun
+                sababchi bo'lmoqchi bo'lsangiz: 8600 0529 5273 8605</p>
         </div>
     </footer>
 </body>

@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
         <br>
@@ -64,13 +63,7 @@
                         GRE Savollari <br />
                         <span style="color: hsl(218, 81%, 75%)">Bazadan o'chirish</span>
                     </h1>
-                    {{-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                        GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
-                    </p> --}}
-
-
                 </div>
-
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
@@ -86,19 +79,8 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                {{-- <div class="form-outline mb-4">
-                                    <input type="file" class="form-control" name="image" required>
-                                    <label class="form-label" for="form3Example2">Savol rasmi</label>
-                                </div> --}}
-                                {{-- <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="nameImage" placeholder="savol nomi"/> --}}
-                                {{-- <label class="form-label" for="form3Example3">name image</label> --}}
-                                {{-- </div> --}}
-                                {{-- <div class="form-outline mb-4">
-                                    <input type="text" class="form-control" name="answer" placeholder="to'g'ri javob (masalan A )"/>
-                                </div> --}}
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-primary btn-sm col-md-6 mb-6">Testni o'chirish</button>
+                                <button type="submit" class="btn btn-primary btn-sm col-md-6 mb-6">Testni
+                                    o'chirish</button>
                             </form>
                         </div>
                     </div>

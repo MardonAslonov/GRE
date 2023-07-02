@@ -93,8 +93,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>
             <p class="m-0 text-center text-white"><i class="bi bi-telephone"></i> +998(99) 895-59-91</p>
             <p class="m-0 text-center text-white">
-
-                <head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon
+                <i class="bi bi-telegram"></i> @Aslonov_Mardon
             </p>
             <div class="d-grid gap-2 d-md-block">
                 <a href="https://t.me/grefizikasertifikat" class="text-white">
@@ -106,6 +105,10 @@
                         </label></h5>
                 </a>
             </div>
+        </div>
+        <div class="container">
+            <p class="m-0 text-center text-white"><i class="bi bi-credit-card-fill"></i> Faoliyatimiz rivoji uchun
+                sababchi bo'lmoqchi bo'lsangiz: 8600 0529 5273 8605</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->

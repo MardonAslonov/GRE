@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <title>Reyting</title>
+    <title>Raqamlar</title>
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
@@ -55,8 +55,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Aslonov Mardon 2023</p>
             <p class="m-0 text-center text-white"><i class="bi bi-telephone"></i> +998(99) 895-59-91</p>
             <p class="m-0 text-center text-white">
-
-                <head><i class="bi bi-telegram"></i></head> @Aslonov_Mardon
+                <i class="bi bi-telegram"></i> @Aslonov_Mardon
             </p>
             <div class="d-grid gap-2 d-md-block">
                 <a href="https://t.me/grefizikasertifikat" class="text-white">
@@ -68,6 +67,10 @@
                         </label></h5>
                 </a>
             </div>
+        </div>
+        <div class="container">
+            <p class="m-0 text-center text-white"><i class="bi bi-credit-card-fill"></i> Faoliyatimiz rivoji uchun
+                sababchi bo'lmoqchi bo'lsangiz: 8600 0529 5273 8605</p>
         </div>
     </footer>
 </body>

@@ -66,7 +66,7 @@
                         GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
                     </p>
                     <a href="{{ route('registrPage') }}"><button type="button"
-                            class="btn btn-primary btn-sm col-md-4 mb-4 justify-content-md-end">Ro'yxatdan
+                            class="btn btn-primary btn-sm col-md-4 mb-4">Ro'yxatdan
                             o'tish</button></a>
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">

@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
         <br>
@@ -57,7 +56,6 @@
                 backdrop-filter: saturate(200%) blur(25px);
             }
         </style>
-
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
@@ -65,11 +63,7 @@
                         GRE Variantlari <br />
                         <span style="color: hsl(218, 81%, 75%)">Bazaga joylash</span>
                     </h1>
-                    {{-- <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                        GRE Subject Test - bu xalqaro sertifikat hisoblanadi.
-                    </p> --}}
                 </div>
-
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
@@ -80,7 +74,7 @@
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="form-outline mb-4">
                                     <input type="text" class="form-control" name="number"
-                                        placeholder="variant nomeri" />
+                                        placeholder="variant nomeri" required />
                                 </div>
                                 <div class="form-outline mb-4">
                                     <input type="file" class="form-control" name="image" required>
@@ -95,9 +89,7 @@
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
+        <br><br><br>
     </section>
 </body>
 

@@ -35,6 +35,9 @@ class UserController extends Controller
 
     public function userList(Request $request)
     {
+        if (Auth::User() == null) {
+            return view('login');
+        }
         $users = DB::table('users')->paginate(10);
         return view('admin.userList', [
             'users' => $users
