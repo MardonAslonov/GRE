@@ -28,6 +28,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 </ul>
+                <a href="{{ route('home') }}" class="btn btn-outline-dark me-md-2 px-1">asosiy <i
+                    class="bi bi-house-fill"></i>
                 <a href="{{ route('ratingAll') }}" class="btn btn-outline-dark me-md-2">Reyting <svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-list-columns-reverse" viewBox="0 0 16 16">
@@ -88,7 +90,7 @@
 
             <div class="col-md-5 col-lg-4">
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <a class="btn btn-outline-primary" href="" role="button">Reyting
+                    <a class="btn btn-outline-primary" href="userList" role="button">Foydalanuvchilar ro'yxati
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-list-columns-reverse" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -98,7 +100,7 @@
                 </div>
                 <br>
                 <div class="d-grid gap-2 col-8 mx-auto">
-                    <a class="btn btn-outline-primary" href="" role="button">Reyting
+                    <a class="btn btn-outline-primary" href="answerListPage" role="button">To'g'ri javoblar
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-list-columns-reverse" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
