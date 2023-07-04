@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->string('userName');
             $table->string('userSurname');
-            $table->string('rawScores');
+            $table->string('totalCorrect');
             $table->timestamps();
         });
     }

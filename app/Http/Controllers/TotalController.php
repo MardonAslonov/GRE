@@ -17,7 +17,7 @@ class TotalController extends Controller
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
         $totals = DB::table('totals')->where('variant_id', $variant_id)
-            ->orderByRaw('rawScores DESC')->paginate(10);
+            ->orderByRaw('totalCorrect DESC')->paginate(10);
         if (Auth::User() == null) {
             return view('login');
         }
@@ -46,7 +46,7 @@ class TotalController extends Controller
         $variant = Variant::where('number', $number)->first();
         $variant_id = $variant->id;
         $totals = DB::table('totals')->where('variant_id', $variant_id)
-            ->orderByRaw('rawScores DESC')->paginate(10);
+            ->orderByRaw('totalCorrect DESC')->paginate(10);
         return view('ratingEnd', [
             'totals' => $totals,
             'number' => $number,

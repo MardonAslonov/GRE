@@ -99,7 +99,7 @@ class ResultController extends Controller
         foreach ($results as $result) {
             $incorrectAnswerAmount = $result->incorrectAnswer + $incorrectAnswerAmount;
         }
-        $rawScores = $correctAnswerAmount - $incorrectAnswerAmount / 4;
+        // $rawScores = $correctAnswerAmount - $incorrectAnswerAmount / 4;
         $totalOld = Total::where('user_id', $user_id)->where('variant_id', $variant_id)->delete();
         $user = User::where('id', $user_id)->get();
         foreach ($user as $item) {
@@ -111,7 +111,7 @@ class ResultController extends Controller
         $total->variant_id = $variant_id;
         $total->userName = $userName;
         $total->userSurname = $userSurname;
-        $total->rawScores = $rawScores;
+        $total->totalCorrect = $correctAnswerAmount;
         $total->save();
         foreach ($results as $result) {
             if ($result->incorrectAnswer == 1) {
@@ -126,7 +126,7 @@ class ResultController extends Controller
             'correctAnswerAmount' => $correctAnswerAmount,
             'incorrectAnswerAmount' => $incorrectAnswerAmount,
             'number' => $number,
-            'rawScores' => $rawScores,
+            // 'rawScores' => $rawScores,
         ]);
     }
 }

@@ -38,7 +38,7 @@
                             </tr>
                             <tr>
                                 <th scope="col">№</th>
-                                <th scope="col">Raw Scores</th>
+                                <th scope="col">To'g'ri javovlar (Total correct)</th>
                                 <th scope="col">Ism</th>
                                 <th scope="col">Familiya</th>
                             </tr>
@@ -48,7 +48,7 @@
                             @foreach ($totals as $total)
                                 <tr>
                                     <th scope="row">{{ ($totals->currentpage() - 1) * 10 + $a++ }}</th>
-                                    <td>{{ $total->rawScores }}</td>
+                                    <td>{{ $total->totalCorrect }}</td>
                                     <td>{{ $total->userName }}</td>
                                     <td>{{ $total->userSurname }}</td>
                                 </tr>

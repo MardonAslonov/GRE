@@ -53,10 +53,10 @@
                             Ishlanmagan: {{ $noAnswerAmount = 100 - ($correctAnswerAmount + $incorrectAnswerAmount) }}
                             ta
                         </div>
-                        <div class="question bg-white p-2">
+                        {{-- <div class="question bg-white p-2">
                             Raw Scores: <br><br>
                             <h4>{{ $rawScores }}</h4>
-                        </div>
+                        </div> --}}
                     </h6>
                 </div>
                 <br>
@@ -79,72 +79,223 @@
                 </div>
             </div>
 
-            <div class="col-md-5 col-lg-5">
+            <div class="col-md-5 col-lg-8">
                 <table class="table table-bordered border-primary">
                     <thead>
                         <tr>
-                            <th scope="col" colspan="4" class="text-center">Balni bilish jadvali</th>
+                            <th scope="col" colspan="8" class="text-center">Balni bilish jadvali</th>
                         </tr>
                         <tr>
+                            <th scope="col" class="text-center">To'g'ri javoblar<br>(Total Correct)</th>
                             <th scope="col" class="text-center">Ball</th>
-                            <th scope="col" class="text-center">Form A<br>(Raw Scores)</th>
-                            <th scope="col" class="text-center">Form B <br>(Raw Scores)</th>
-                            <th scope="col" class="text-center">Form C <br>(Raw Scores)</th>
+                            <th scope="col" class="text-center">To'g'ri javoblar<br>(Total Correct)</th>
+                            <th scope="col" class="text-center">Ball</th>
+                            <th scope="col" class="text-center">To'g'ri javoblar<br>(Total Correct)</th>
+                            <th scope="col" class="text-center">Ball</th>
+                            <th scope="col" class="text-center">To'g'ri javoblar<br>(Total Correct)</th>
+                            <th scope="col" class="text-center">Ball</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <tr>
-                            <th scope="row">900</th>
-                            <td class="text-center">
-                                <h4>73</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>68-69</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>64</h4>
-                            </td>
+                            <th scope="row">84-100</th>
+                            <th><h4>990</h4></th>
+                            <th scope="row">64</th>
+                            <th><h4>790</h4></th>
+                            <th scope="row">43</th>
+                            <th><h4>590</h4></th>
+                            <th scope="row">18-19</th>
+                            <th><h4>390</h4></th>
                         </tr>
                         <tr>
-                            <th scope="row">800</th>
-                            <td class="text-center">
-                                <h4>58-59</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>54-55</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>50</h4>
-                            </td>
+                            <th scope="row">83</th>
+                            <th><h4>980</h4></th>
+                            <th scope="row">63</th>
+                            <th><h4>780</h4></th>
+                            <th scope="row">42</th>
+                            <th><h4>580</h4></th>
+                            <th scope="row">17</th>
+                            <th><h4>380</h4></th>
                         </tr>
                         <tr>
-                            <th scope="row">700</th>
-                            <td class="text-center">
-                                <h4>44</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>41</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>38</h4>
-                            </td>
+                            <th scope="row">82</th>
+                            <th><h4>970</h4></th>
+                            <th scope="row">62</th>
+                            <th><h4>770</h4></th>
+                            <th scope="row">41</th>
+                            <th><h4>570</h4></th>
+                            <th scope="row">16</th>
+                            <th><h4>370</h4></th>
                         </tr>
                         <tr>
-                            <th scope="row">600</th>
-                            <td class="text-center">
-                                <h4>30</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>27</h4>
-                            </td>
-                            <td class="text-center">
-                                <h4>27</h4>
-                            </td>
+                            <th scope="row">81</th>
+                            <th><h4>960</h4></th>
+                            <th scope="row">61</th>
+                            <th><h4>760</h4></th>
+                            <th scope="row">40</th>
+                            <th><h4>560</h4></th>
+                            <th scope="row">14-15</th>
+                            <th><h4>360</h4></th>
                         </tr>
                         <tr>
-                            <th colspan="4" scope="row" class="text-center"><br>Raw Scores = To'g'ri - ( Noto'g'ri
-                                / 4
-                                ) <br><br></th>
+                            <th scope="row">80</th>
+                            <th><h4>950</h4></th>
+                            <th scope="row">60</th>
+                            <th><h4>750</h4></th>
+                            <th scope="row">38-39</th>
+                            <th><h4>550</h4></th>
+                            <th scope="row">13</th>
+                            <th><h4>350</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">79</th>
+                            <th><h4>940</h4></th>
+                            <th scope="row">59</th>
+                            <th><h4>740</h4></th>
+                            <th scope="row">37</th>
+                            <th><h4>540</h4></th>
+                            <th scope="row">12</th>
+                            <th><h4>340</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">78</th>
+                            <th><h4>930</h4></th>
+                            <th scope="row">58</th>
+                            <th><h4>730</h4></th>
+                            <th scope="row">36</th>
+                            <th><h4>530</h4></th>
+                            <th scope="row">11</th>
+                            <th><h4>330</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">77</th>
+                            <th><h4>920</h4></th>
+                            <th scope="row">57</th>
+                            <th><h4>720</h4></th>
+                            <th scope="row">35</th>
+                            <th><h4>520</h4></th>
+                            <th scope="row">9-10</th>
+                            <th><h4>320</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">76</th>
+                            <th><h4>910</h4></th>
+                            <th scope="row">56</th>
+                            <th><h4>710</h4></th>
+                            <th scope="row">33-34</th>
+                            <th><h4>510</h4></th>
+                            <th scope="row">8</th>
+                            <th><h4>310</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">75</th>
+                            <th><h4>900</h4></th>
+                            <th scope="row">55</th>
+                            <th><h4>700</h4></th>
+                            <th scope="row">32</th>
+                            <th><h4>500</h4></th>
+                            <th scope="row">7</th>
+                            <th><h4>300</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">74</th>
+                            <th><h4>890</h4></th>
+                            <th scope="row">54</th>
+                            <th><h4>690</h4></th>
+                            <th scope="row">31</th>
+                            <th><h4>490</h4></th>
+                            <th scope="row">6</th>
+                            <th><h4>290</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">73</th>
+                            <th><h4>880</h4></th>
+                            <th scope="row">53</th>
+                            <th><h4>680</h4></th>
+                            <th scope="row">30</th>
+                            <th><h4>480</h4></th>
+                            <th scope="row">5</th>
+                            <th><h4>280</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">72</th>
+                            <th><h4>870</h4></th>
+                            <th scope="row">52</th>
+                            <th><h4>670</h4></th>
+                            <th scope="row">28-29</th>
+                            <th><h4>470</h4></th>
+                            <th scope="row">4</th>
+                            <th><h4>270</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">71</th>
+                            <th><h4>860</h4></th>
+                            <th scope="row">51</th>
+                            <th><h4>660</h4></th>
+                            <th scope="row">27</th>
+                            <th><h4>460</h4></th>
+                            <th scope="row">1-3</th>
+                            <th><h4>260</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">70</th>
+                            <th><h4>850</h4></th>
+                            <th scope="row">50</th>
+                            <th><h4>650</h4></th>
+                            <th scope="row">26</th>
+                            <th><h4>450</h4></th>
+                            <th scope="row">0</th>
+                            <th><h4>250</h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">69</th>
+                            <th><h4>840</h4></th>
+                            <th scope="row">49</th>
+                            <th><h4>640</h4></th>
+                            <th scope="row">25</th>
+                            <th><h4>440</h4></th>
+                            <th scope="row"></th>
+                            <th><h4></h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">68</th>
+                            <th><h4>830</h4></th>
+                            <th scope="row">48</th>
+                            <th><h4>630</h4></th>
+                            <th scope="row">23-24</th>
+                            <th><h4>430</h4></th>
+                            <th scope="row"></th>
+                            <th><h4></h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">67</th>
+                            <th><h4>820</h4></th>
+                            <th scope="row">47</th>
+                            <th><h4>620</h4></th>
+                            <th scope="row">22</th>
+                            <th><h4>420</h4></th>
+                            <th scope="row"></th>
+                            <th><h4></h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">66</th>
+                            <th><h4>810</h4></th>
+                            <th scope="row">46</th>
+                            <th><h4>610</h4></th>
+                            <th scope="row">21</th>
+                            <th><h4>410</h4></th>
+                            <th scope="row"></th>
+                            <th><h4></h4></th>
+                        </tr>
+                        <tr>
+                            <th scope="row">65</th>
+                            <th><h4>800</h4></th>
+                            <th scope="row">44-45</th>
+                            <th><h4>600</h4></th>
+                            <th scope="row">20</th>
+                            <th><h4>400</h4></th>
+                            <th scope="row"></th>
+                            <th><h4></h4></th>
                         </tr>
                     </tbody>
                 </table>
